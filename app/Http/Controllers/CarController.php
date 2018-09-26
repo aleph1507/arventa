@@ -164,7 +164,7 @@ class CarController extends Controller
       if($c->KMs)
         $car->KMs = $c->KMs;
       $car->price = $c->price;
-      $car->featuredImage = $c->featuredimage;
+      $car->featuredimage = $c->featuredimage;
       $car->galleryimages = $c->galleryimages;
 
       $car->save();
