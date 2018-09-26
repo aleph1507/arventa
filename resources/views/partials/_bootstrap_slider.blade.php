@@ -7,7 +7,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item carousel-full active">
-        <img class="w-100 slider-img" src="{{asset('images/main_slider/1.jpg')}}" alt="First slide">
+        <img class="w-100 slider-img" src="{{secure_asset('images/main_slider/1.jpg')}}" alt="First slide">
         <div class="carousel-caption d-none d-md-block main-slider-content">
           <h1 style="color:#fff !important;">always 250 new premium car models available</h1>
           {{-- <p>slide 1/3</p> --}}
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="w-100 carousel-item carousel-full">
-        <img class="w-100 slider-img" src="{{asset('images/main_slider/2.jpg')}}" alt="Second slide">
+        <img class="w-100 slider-img" src="{{secure_asset('images/main_slider/2.jpg')}}" alt="Second slide">
         <div class="carousel-caption d-none d-md-block main-slider-content">
           <h1 style="color:#fff !important;">always 250 new premium car models available</h1>
           {{-- <p>slide 2/3</p> --}}
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="w-100 carousel-item carousel-full">
-        <img class="w-100 slider-img" src="{{asset('images/main_slider/3.jpg')}}" alt="Third slide">
+        <img class="w-100 slider-img" src="{{secure_asset('images/main_slider/3.jpg')}}" alt="Third slide">
         <div class="carousel-caption d-none d-md-block main-slider-content">
           <h1 style="color:#fff !important;">always 250 new premium car models available</h1>
           {{-- <p>slide 3/3</p> --}}

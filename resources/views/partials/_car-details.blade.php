@@ -740,9 +740,9 @@
      <div class="col-md-8">
         <div class="slider-slick">
           <div class="slider slider-for detail-big-car-gallery">
-                <img class="img-fluid" src="{{asset('images/cars/', $car->featuredimage)}}" alt="">
+                <img class="img-fluid" src="{{secure_asset('images/cars/', $car->featuredimage)}}" alt="">
                 @foreach($galleryimages as $gi)
-                  <img class="img-fluid" src="{{asset('images/cars/', $car->id, $gi)}}" alt="">
+                  <img class="img-fluid" src="{{secure_asset('images/cars/', $car->id, $gi)}}" alt="">
                 @endforeach
                 {{-- <img class="img-fluid" src="images/detail/big/03.jpg" alt="">
                 <img class="img-fluid" src="images/detail/big/04.jpg" alt="">

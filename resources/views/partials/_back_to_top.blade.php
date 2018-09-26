@@ -3,7 +3,7 @@
  back to top -->
 
 <div class="car-top d-none d-lg-block">
-  <span><img src="{{asset('images/car.png')}}" alt=""></span>
+  <span><img src="{{secure_asset('images/car.png')}}" alt=""></span>
 </div>
 
  <!--=================================

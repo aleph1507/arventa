@@ -3,8 +3,8 @@
  latest news -->
 
 <section class="latest-blog objects-car white-bg page page-section-ptb">
- <div class="objects-left"><img class="img-fluid objects-1" src="{{asset('images/objects/03.jpg')}}" alt=""></div>
- <div class="objects-right"><img class="img-fluid objects-2" src="{{asset('images/objects/04.jpg')}}" alt=""></div>
+ <div class="objects-left"><img class="img-fluid objects-1" src="{{secure_asset('images/objects/03.jpg')}}" alt=""></div>
+ <div class="objects-right"><img class="img-fluid objects-2" src="{{secure_asset('images/objects/04.jpg')}}" alt=""></div>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -18,7 +18,7 @@
     <div class="blog-1">
       <div class="row">
         <div class="col-md-6">
-          <img class="img-fluid" src="{{asset('images/blog/01.jpg')}}" alt="">
+          <img class="img-fluid" src="{{secure_asset('images/blog/01.jpg')}}" alt="">
         </div>
         <div class="col-md-6">
           <div class="blog-content">

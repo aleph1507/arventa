@@ -7,7 +7,7 @@
       <h2 class="section-title wow fadeInUp light-title" data-wow-duration="1000ms" data-wow-delay="300ms">{{$car->brand->name}}</h2>
     </div>
     <div class="d-block d-md-none d-lg-none sm-featured">
-      <img src="{{asset('images/cars/' . $car->featuredimage)}}" class="img-fluid" style="background-color: rgba(150, 150, 150, 0);">
+      <img src="{{secure_asset('images/cars/' . $car->featuredimage)}}" class="img-fluid" style="background-color: rgba(150, 150, 150, 0);">
     </div>
     <div class="row">
       <div class="col-md-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -93,7 +93,7 @@
     </div>
   </div>
   <div class="img-about-out" style="background-color: rgba(150, 150, 150, 0);">
-    <img src="{{asset('images/cars/' . $car->featuredimage)}}" style="background-color: rgba(150, 150, 150, 0);" alt="">
+    <img src="{{secure_asset('images/cars/' . $car->featuredimage)}}" style="background-color: rgba(150, 150, 150, 0);" alt="">
   </div>
 
   <div class="container">
@@ -105,7 +105,7 @@
             @if($gi != "")
               <div class="{{$first ? 'item active' : 'item'}}">
                 <div class="contents text-center">
-                  <img src="{{asset('images/cars/' . $gi)}}" class="img-fluid" > <!--style="max-height:400px;" -->
+                  <img src="{{secure_asset('images/cars/' . $gi)}}" class="img-fluid" > <!--style="max-height:400px;" -->
                 </div>
               </div>
               < $first = false; ?>

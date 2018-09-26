@@ -1,7 +1,7 @@
 <a href="{{route('cars.show', 1)}}" class="div-a">
   <div class="car-thumnail">
     {{-- {{var_dump($car)}} --}}
-    <img src="{{asset('images/cars/' . $car->featuredimage)}}" class="car-thumb-img img-fluid">
+    <img src="{{secure_asset('images/cars/' . $car->featuredimage)}}" class="car-thumb-img img-fluid">
     <h3 class="car-thumb-header">{{$car->brand->name}}</h3>
     <p class="lead">{{$car->model}}</p>
     <span class="car-thumb-info">Status: <span class="status">-</span></span>

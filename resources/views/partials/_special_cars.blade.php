@@ -5,19 +5,19 @@
     <div class="row">
       <div class="car-thumbs-wrapper">
         <div class="col-xs-12 col-md-6 col-lg-3">
-          <img src="{{asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
+          <img src="{{secure_asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
           <h4>Audi RS5 Coupe 2.9 TFSI Quattro Tiptronic</h4>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-3 ">
-          <img src="{{asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
+          <img src="{{secure_asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
           <h4>Audi RS5 Coupe 2.9 TFSI Quattro Tiptronic</h4>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-3">
-          <img src="{{asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
+          <img src="{{secure_asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
           <h4>Audi RS5 Coupe 2.9 TFSI Quattro Tiptronic</h4>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-3">
-          <img src="{{asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
+          <img src="{{secure_asset('img/car_thumb.jpg')}}" class="car-thumb-img img-fluid">
           <h4>Audi RS5 Coupe 2.9 TFSI Quattro Tiptronic</h4>
         </div>
       </div>

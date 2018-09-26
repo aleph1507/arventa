@@ -13,7 +13,7 @@
       @endif
         <div class="card car-card">
           <a class="card car-card" style="padding:0;" href="{{route('cars.show', $car->id)}}">
-          <img src="{{asset('images/cars/' . $car->featuredimage)}}" alt="{{$car->model}}" class="card-img-top">
+          <img src="{{secure_asset('images/cars/' . $car->featuredimage)}}" alt="{{$car->model}}" class="card-img-top">
             <div class="card-body">
               <h1 class="card-title">{{$car->model}}</h1>
               <p class="card-text">Motor Capacity: {{$car->motorcapacity}}</p>

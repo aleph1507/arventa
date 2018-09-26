@@ -9,7 +9,7 @@
 <nav class="navbar navbar-dark bg-dark" style="padding-top:1.2%; padding-bottom:1.2%;">
   <div style="width:100%;">
     <a class="navbar-brand" style="display: inline;" href="{{route('root.index')}}">
-      <img class="nav-logo" src="{{asset('img/1-arventa-web-logo.png')}}" alt="Arventa GMBH"></a>
+      <img class="nav-logo" src="{{secure_asset('img/1-arventa-web-logo.png')}}" alt="Arventa GMBH"></a>
     <span style="font-size:30px;cursor:pointer; float:right;padding-top:0.5%;" onclick="openNav()">&#9776;</span>
     <a href="{{route('cars.index')}}" id="menu_button" class="d-none d-lg-block">stocklist</a>
   </div>
@@ -83,7 +83,7 @@ function closeNav() {
         <!-- menu logo -->
         <ul class="menu-logo">
             <li>
-                <a href="index.html"><img id="logo_img" src="{{asset('images/logo-light.png')}}" alt="logo"> </a>
+                <a href="index.html"><img id="logo_img" src="{{secure_asset('images/logo-light.png')}}" alt="logo"> </a>
             </li>
         </ul>
         <!-- menu links -->

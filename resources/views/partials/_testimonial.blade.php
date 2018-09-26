@@ -21,11 +21,11 @@
       <div class="item">
         <div class="testimonial-block text-center">
            <div class="testimonial-image">
-             <img class="img-fluid" src="{{asset('images/testimonial/01.jpg')}}" alt="">
+             <img class="img-fluid" src="{{secure_asset('images/testimonial/01.jpg')}}" alt="">
            </div>
            <div class="testimonial-box">
              <div class="testimonial-avtar">
-               <img class="img-fluid" src="{{asset('images/team/01.jpg')}}" alt="">
+               <img class="img-fluid" src="{{secure_asset('images/team/01.jpg')}}" alt="">
                <h6>Alice Williams</h6>
                <span>Auto Dealer</span>
              </div>
@@ -39,11 +39,11 @@
      <div class="item">
         <div class="testimonial-block text-center">
            <div class="testimonial-image">
-             <img class="img-fluid" src="{{asset('images/testimonial/02.jpg')}}" alt="">
+             <img class="img-fluid" src="{{secure_asset('images/testimonial/02.jpg')}}" alt="">
            </div>
            <div class="testimonial-box">
              <div class="testimonial-avtar">
-               <img class="img-fluid" src="{{asset('images/team/02.jpg')}}" alt="">
+               <img class="img-fluid" src="{{secure_asset('images/team/02.jpg')}}" alt="">
                <h6>Michael Bean</h6>
                <span>Car Dealer</span>
              </div>
@@ -57,11 +57,11 @@
       <div class="item">
         <div class="testimonial-block text-center">
            <div class="testimonial-image">
-             <img class="img-fluid" src="{{asset('images/testimonial/03.jpg')}}" alt="">
+             <img class="img-fluid" src="{{secure_asset('images/testimonial/03.jpg')}}" alt="">
            </div>
            <div class="testimonial-box">
              <div class="testimonial-avtar">
-               <img class="img-fluid" src="{{asset('images/team/03.jpg')}}" alt="">
+               <img class="img-fluid" src="{{secure_asset('images/team/03.jpg')}}" alt="">
                <h6>Felica Queen</h6>
                <span>Auto Dealer</span>
              </div>
@@ -75,11 +75,11 @@
       <div class="item">
         <div class="testimonial-block text-center">
            <div class="testimonial-image">
-             <img class="img-fluid" src="{{asset('images/testimonial/04.jpg')}}" alt="">
+             <img class="img-fluid" src="{{secure_asset('images/testimonial/04.jpg')}}" alt="">
            </div>
            <div class="testimonial-box">
              <div class="testimonial-avtar">
-               <img class="img-fluid" src="{{asset('images/team/04.jpg')}}" alt="">
+               <img class="img-fluid" src="{{secure_asset('images/team/04.jpg')}}" alt="">
                <h6>Sara Lisbon</h6>
                <span>Customer</span>
              </div>

@@ -29,7 +29,7 @@
 
 
               style="z-index: 12;">
-                <img src="{{asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+                <img src="{{secure_asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
             </div>
           </li>
 
@@ -56,7 +56,7 @@
 
 
               style="z-index: 12;">
-                <img src="{{asset('images/main_slider/1.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+                <img src="{{secure_asset('images/main_slider/1.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
             </div>
           </li>
 
@@ -83,7 +83,7 @@
 
 
               style="z-index: 12;">
-                <img src="{{asset('images/main_slider/3.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+                <img src="{{secure_asset('images/main_slider/3.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
             </div>
           </li>
         </ul>
@@ -107,7 +107,7 @@
       data-param5="" data-param6="" data-param7="" data-param8=""
       data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
-        <img src="{{asset('images/main_slider/1.jpg')}}"  alt=""
+        <img src="{{secure_asset('images/main_slider/1.jpg')}}"  alt=""
         data-bgposition="center center" data-bgfit="cover"
         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
     <!-- LAYERS -->
@@ -220,7 +220,7 @@ Safe With us </div>
       data-easeout="default" data-masterspeed="300"
       data-thumb="revolution/assets/100x50_cb52a-banner-02.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
-        <img src="{{asset('images/main_slider/2.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+        <img src="{{secure_asset('images/main_slider/2.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
     <!-- LAYERS -->
 
     <!-- LAYER NR. 6 -->
@@ -327,7 +327,7 @@ business with us </div>
           data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
           data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> --}}
         <!-- MAIN IMAGE -->
-            {{-- <img src="{{asset('revolution/assets/3176d-road-bg.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina> --}}
+            {{-- <img src="{{secure_asset('revolution/assets/3176d-road-bg.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina> --}}
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -361,7 +361,7 @@ business with us </div>
 
 
           style="z-index: 12;">
-            <img src="{{asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+            <img src="{{secure_asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
         </div>
       </li>
     </ul>
@@ -432,7 +432,7 @@ business with us </div>
 
 
           style="z-index: 8;">
-          <img src="{{asset('images/main_slider/1.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
+          <img src="{{secure_asset('images/main_slider/1.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
 
         <!-- LAYER NR. 5 -->
         {{-- <div class="tp-caption   tp-resizeme"
@@ -449,12 +449,12 @@ business with us </div>
           data-responsive_offset="on"
 
 
-          style="z-index: 9;"><img src="{{asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div>
+          style="z-index: 9;"><img src="{{secure_asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div>
       </li> --}}
       <!-- SLIDE  -->
         {{-- <li data-index="rs-6" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="revolution/assets/100x50_3176d-road-bg.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> --}}
         <!-- MAIN IMAGE -->
-            {{-- <img src="{{asset('revolution/assets/3176d-road-bg.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina> --}}
+            {{-- <img src="{{secure_asset('revolution/assets/3176d-road-bg.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina> --}}
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -472,7 +472,7 @@ business with us </div>
           data-responsive_offset="on"
 
 
-          style="z-index: 5;"><img src="{{asset('images/main_slider/3.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
+          style="z-index: 5;"><img src="{{secure_asset('images/main_slider/3.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
 
         <!-- LAYER NR. 2 -->
         {{-- <div class="tp-caption   tp-resizeme"
@@ -489,7 +489,7 @@ business with us </div>
           data-responsive_offset="on"
 
 
-          style="z-index: 6;"><img src="{{asset('images/main_slider/1.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
+          style="z-index: 6;"><img src="{{secure_asset('images/main_slider/1.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
 
         <!-- LAYER NR. 3 -->
         {{-- <div class="tp-caption   tp-resizeme"
@@ -570,7 +570,7 @@ business with us </div>
           data-responsive_offset="on"
 
 
-          style="z-index: 10;"><img src="{{asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
+          style="z-index: 10;"><img src="{{secure_asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
 
         <!-- LAYER NR. 7 -->
         {{-- <div class="tp-caption   tp-resizeme"
@@ -587,7 +587,7 @@ business with us </div>
           data-responsive_offset="on"
 
 
-          style="z-index: 11;"><img src="{{asset('images/main_slider/3.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
+          style="z-index: 11;"><img src="{{secure_asset('images/main_slider/3.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina> </div> --}}
 
         <!-- LAYER NR. 8 -->
         {{-- <div class="tp-caption   tp-resizeme"
@@ -605,7 +605,7 @@ business with us </div>
 
 
           style="z-index: 12;">
-            <img src="{{asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+            <img src="{{secure_asset('images/main_slider/2.jpg')}}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
         </div>
       </li>
     </ul>
