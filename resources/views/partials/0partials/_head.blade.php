@@ -10,15 +10,15 @@
     <title>Car Salon</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{secure_asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/simple-line-icons.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/slicknav.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/animate.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/main.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/responsive.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/simple-line-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
   </head>
   <body>

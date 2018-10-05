@@ -1,6 +1,6 @@
 <div class="filter">
   <div class="f-header">
-    filter <img class="filter-arrow" src="{{secure_asset('img/arrow-up.png')}}">
+    filter <img class="filter-arrow" src="{{asset('img/arrow-up.png')}}">
   </div>
   <div class="f-body">
     <input type="text" class="black-input" placeholder="Search...">

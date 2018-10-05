@@ -1,13 +1,13 @@
 <div id="singleCarCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{{secure_asset('images/car/02.jpg')}}" alt="First slide">
+      <img class="d-block w-100" src="{{asset('images/car/02.jpg')}}" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{secure_asset('images/car/02.jpg')}}" alt="Second slide">
+      <img class="d-block w-100" src="{{asset('images/car/02.jpg')}}" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{secure_asset('images/car/02.jpg')}}" alt="Third slide">
+      <img class="d-block w-100" src="{{asset('images/car/02.jpg')}}" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#singleCarCarousel" role="button" data-slide="prev">
@@ -22,15 +22,15 @@
 
 <div id="carousel-status" class="carousel-static row spacing-top">
   <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{secure_asset('images/car/car_slider_thumb1.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
+    <img src="{{asset('images/car/car_slider_thumb1.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
   </div>
   <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{secure_asset('images/car/car_slider_thumb2.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
+    <img src="{{asset('images/car/car_slider_thumb2.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
   </div>
   <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{secure_asset('images/car/car_slider_thumb3.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
+    <img src="{{asset('images/car/car_slider_thumb3.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
   </div>
   <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{secure_asset('images/car/car_slider_thumb4.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
+    <img src="{{asset('images/car/car_slider_thumb4.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
   </div>
 </div>

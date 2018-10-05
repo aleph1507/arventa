@@ -10,35 +10,35 @@
 <title>Arventa GMBH</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{secure_asset('images/favicon.ico')}}" />
+<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
 
 <!-- bootstrap -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/bootstrap.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" />
 
 <!-- flaticon -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/flaticon.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/flaticon.css')}}" />
 
 <!-- mega menu -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/mega-menu/mega_menu.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/mega-menu/mega_menu.css')}}" />
 
 <!-- font awesome -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/font-awesome.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}" />
 
 <!-- owl-carousel -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/owl-carousel/owl.carousel.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/owl-carousel/owl.carousel.css')}}" />
 
 <!-- magnific-popup -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/magnific-popup/magnific-popup.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/magnific-popup/magnific-popup.css')}}" />
 
 <!-- revolution -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('revolution/css/settings.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('revolution/css/settings.css')}}" />
 
 <!-- main style -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/style.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
 
 <!-- responsive -->
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/responsive.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
 
-<link rel="stylesheet" href="{{secure_asset('css/custom.css')}}">
+<link rel="stylesheet" href="{{asset('css/custom.css')}}">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900" rel="stylesheet">
 </head>

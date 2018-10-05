@@ -5,7 +5,7 @@
 
  <div id="loading">
   <div id="loading-center">
-      <img src="{{secure_asset('images/loader6.gif')}}" alt="">
+      <img src="{{asset('images/loader6.gif')}}" alt="">
  </div>
 </div>
 

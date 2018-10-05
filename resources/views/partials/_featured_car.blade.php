@@ -2,7 +2,7 @@
  feature-car -->
 
 <section class="feature-car bg-2 bg-overlay-black-70 page-section-ptb"
-  style="background: {{secure_asset('images/settings/download.jpeg')}}">
+  style="background: {{asset('images/settings/download.jpeg')}}">
   <div class="container">
    <div class="row">
     <div class="col-md-12">
@@ -19,7 +19,7 @@
       <div class="item">
        <div class="car-item text-center">
          <div class="car-image">
-           <img class="img-fluid" src="{{secure_asset('images/car/01.jpg')}}" alt="">
+           <img class="img-fluid" src="{{asset('images/car/01.jpg')}}" alt="">
            <div class="car-overlay-banner">
             <ul>
               <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -54,7 +54,7 @@
      <div class="item">
        <div class="car-item text-center">
          <div class="car-image">
-           <img class="img-fluid" src="{{secure_asset('images/car/02.jpg')}}" alt="">
+           <img class="img-fluid" src="{{asset('images/car/02.jpg')}}" alt="">
            <div class="car-overlay-banner">
             <ul>
               <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -89,7 +89,7 @@
      <div class="item">
        <div class="car-item text-center">
          <div class="car-image">
-           <img class="img-fluid" src="{{secure_asset('images/car/03.jpg')}}" alt="">
+           <img class="img-fluid" src="{{asset('images/car/03.jpg')}}" alt="">
            <div class="car-overlay-banner">
             <ul>
               <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -124,7 +124,7 @@
      <div class="item">
        <div class="car-item text-center">
          <div class="car-image">
-           <img class="img-fluid" src="{{secure_asset('images/car/04.jpg')}}" alt="">
+           <img class="img-fluid" src="{{asset('images/car/04.jpg')}}" alt="">
            <div class="car-overlay-banner">
             <ul>
               <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -159,7 +159,7 @@
       <div class="item">
        <div class="car-item text-center">
          <div class="car-image">
-           <img class="img-fluid" src="{{secure_asset('images/car/05.jpg')}}" alt="">
+           <img class="img-fluid" src="{{asset('images/car/05.jpg')}}" alt="">
            <div class="car-overlay-banner">
             <ul>
               <li><a href="#"><i class="fa fa-link"></i></a></li>

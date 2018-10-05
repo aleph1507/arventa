@@ -379,7 +379,7 @@
               <div class="col-lg-4">
                <div class="car-item gray-bg text-center">
                  <div class="car-image">
-                   <img class="img-fluid" src="{{secure_asset('images/cars/' . $c->featuredimage)}}" alt="">
+                   <img class="img-fluid" src="{{asset('images/cars/' . $c->featuredimage)}}" alt="">
                    <div class="car-overlay-banner">
                     <ul>
                       <li><a href="#"><i class="fa fa-link"></i></a></li>

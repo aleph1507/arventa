@@ -2,8 +2,8 @@
  welcome -->
 
 <section class="welcome-block objects-car page-section-ptb white-bg">
- <div class="objects-left left"><img class="img-fluid objects-1" src="{{secure_asset('images/objects/01.jpg')}}" alt=""></div>
- <div class="objects-right right"><img class="img-fluid objects-2" src="{{secure_asset('images/objects/02.jpg')}}" alt=""></div>
+ <div class="objects-left left"><img class="img-fluid objects-1" src="{{asset('images/objects/01.jpg')}}" alt=""></div>
+ <div class="objects-right right"><img class="img-fluid objects-2" src="{{asset('images/objects/02.jpg')}}" alt=""></div>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -63,7 +63,7 @@
     <div class="row">
        <div class="col-md-12">
           <div class="halp-call text-center">
-            <img class="img-fluid" src="{{secure_asset('images/team/01.jpg')}}" alt="">
+            <img class="img-fluid" src="{{asset('images/team/01.jpg')}}" alt="">
             <span>Have any question ?</span>
             <h2 class="text-red">(007) 123 456 7890</h2>
           </div>

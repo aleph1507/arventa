@@ -44,28 +44,28 @@
             <h3 class="block-title">Flicker Gallery</h3>
             <ul class="featured-list">
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img1.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img1.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img2.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img2.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img3.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img3.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img4.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img4.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img5.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img5.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img6.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img6.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img7.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img7.jpg')}}"></a>
               </li>
               <li>
-                <a href="#"><img alt="" src="{{secure_asset('img/featured/img8.jpg')}}"></a>
+                <a href="#"><img alt="" src="{{asset('img/featured/img8.jpg')}}"></a>
               </li>
             </ul>
           </div>

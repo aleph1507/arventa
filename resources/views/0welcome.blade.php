@@ -14,7 +14,7 @@
           <div class="card-deck">
         @endif
         <div class="card car-card">
-          <img src="{{secure_asset('images/cars/' . $car->featuredimage)}}" alt="{{$car->model}}" class="card-img-top">
+          <img src="{{asset('images/cars/' . $car->featuredimage)}}" alt="{{$car->model}}" class="card-img-top">
           <div class="card-body">
             <h1 class="card-title">{{$car->model}}</h1>
             <p class="card-text">Motor Capacity: {{$car->motorcapacity}}</p>

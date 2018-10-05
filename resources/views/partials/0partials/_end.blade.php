@@ -16,18 +16,18 @@
 </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="{{secure_asset('js/jquery-min.js')}}"></script>
-<script src="{{secure_asset('js/tether.min.js')}}"></script>
-<script src="{{secure_asset('js/bootstrap.min.js')}}"></script>
-<script src="{{secure_asset('js/mixitup.min.js')}}"></script>
-<script src="{{secure_asset('js/owl.carousel.min.js')}}"></script>
-<script src="{{secure_asset('js/jquery.slicknav.js')}}"></script>
-<script src="{{secure_asset('js/jquery.nav.js')}}"></script>
-<script src="{{secure_asset('js/smooth-scroll.js')}}"></script>
-<script src="{{secure_asset('js/smooth-on-scroll.js')}}"></script>
-<script src="{{secure_asset('js/wow.js')}}"></script>
-<script src="{{secure_asset('js/jquery.counterup.min.js')}}"></script>
-<script src="{{secure_asset('js/waypoints.min.js')}}"></script>
-<script src="{{secure_asset('js/main.js')}}"></script>
+<script src="{{asset('js/jquery-min.js')}}"></script>
+<script src="{{asset('js/tether.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/mixitup.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/jquery.slicknav.js')}}"></script>
+<script src="{{asset('js/jquery.nav.js')}}"></script>
+<script src="{{asset('js/smooth-scroll.js')}}"></script>
+<script src="{{asset('js/smooth-on-scroll.js')}}"></script>
+<script src="{{asset('js/wow.js')}}"></script>
+<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('js/waypoints.min.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>
