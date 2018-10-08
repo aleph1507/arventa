@@ -40,8 +40,9 @@
 <script src="{{asset('js/sb-admin.min.js')}}"></script>
 <!-- Custom scripts for this page-->
 <script src="{{asset('js/sb-admin-datatables.min.js')}}"></script>
-<script src="{{asset('js/sb-admin-charts.min.js')}}"></script>
+{{-- <script src="{{asset('js/sb-admin-charts.min.js')}}"></script> --}}
 <script src="{{asset('js/dropzone.js')}}"></script>
+<script src="{{asset('js/scripts.js')}}"></script>
 </div>
 </body>
 

@@ -48,3 +48,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/admin/cars/delete/{id}', 'CarController@destroy')->name('cars.delete');
 
 Route::post('/admin/brands/delete/{id}', 'BrandsController@destroy')->name('brands.delete');
+
+Route::post('/admin/gallery_upload', 'CarController@uploadGallery')->name('gallery.upload');

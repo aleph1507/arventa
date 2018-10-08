@@ -77,8 +77,11 @@
           <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
         </div>
         <div class="form-group">
-          <label for="file">Gallery Images</label>
-          <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple />
+          <div class="dropDiv" id="dropDiv">
+
+          </div>
+          {{-- <label for="file">Gallery Images</label>
+          <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple /> --}}
         </div>
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-6">

@@ -47,6 +47,8 @@
 <!-- custom -->
 <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 
+<script src="{{asset('js/scripts.js')}}"></script>
+
 <script>
   $(document).ready(function() {
     var filterCol = $("#filter-col");

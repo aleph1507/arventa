@@ -18,6 +18,8 @@
   <link href="{{asset('css/sb-admin.css')}}" rel="stylesheet">
 
   <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+
+  <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
