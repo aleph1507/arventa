@@ -9,6 +9,7 @@ use File;
 use Session;
 use App\Brand;
 use Illuminate\Filesystem\Filesystem;
+// use Illuminate\Http\Response;
 
 class CarController extends Controller
 {
@@ -358,20 +359,23 @@ class CarController extends Controller
 
     // $tmp_files = [];
     public function uploadGallery(Request $request) {
-        $fs = new Filesystem();
+        // global $tmp_files;
+        // $fs = new Filesystem();
         $tmp_dir = public_path() . '/images/cars/tmp';
         $image = $request->file('qqfile');
-        $filename = $request->qquuid . '.' . $image->getClientOriginalExtension();
+        $filename = 'FIN' . $request->qquuid . '.' . $image->getClientOriginalExtension();
         File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
-        $fs->cleanDirectory($tmp_dir);
-        $location = public_path($tmp_dir . '/' . $filename);
+        // $fs->cleanDirectory($tmp_dir);
+        $location = $tmp_dir . '/' . $filename;
         Image::make($image)->save($location);
-        array_push($tmp_files, $location);
+        array_push($this->tmp_files, $location);
 
         // $msg = ['success' => true];
         // $ret_msg = json_encode($msg);
+        return $this->tmp_files;
+        // return json_encode(['success' => true]);
 
-        return Response::json(['success' => true], 200);
+        // return Response::json(['success' => true], 200);
         // return $ret_msg;
         // echo 'REQUEST: ' . $request;
         // die();
