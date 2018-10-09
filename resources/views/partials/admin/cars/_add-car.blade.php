@@ -1,7 +1,7 @@
 @if(isset($car))
-  <form action="{{route('cars.update', $car->id)}}" method="post" enctype="multipart/form-data"> <!-- class="dropzone" -->
+  <form action="{{route('cars.update', $car->id)}}" id="car_form" method="post" enctype="multipart/form-data"> <!-- class="dropzone" -->
 @else
-  <form action="{{route('cars.store')}}" method="post" enctype="multipart/form-data"> <!-- class="dropzone" -->
+  <form action="{{route('cars.store')}}" id="car_form" method="post" enctype="multipart/form-data"> <!-- class="dropzone" -->
 @endif
   {{csrf_field()}}
   <div class="container">
@@ -77,11 +77,11 @@
           <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
         </div>
         <div class="form-group">
-          <div class="dropDiv" id="dropDiv">
+          <div id="fine-uploader-gallery">
 
           </div>
-          {{-- <label for="file">Gallery Images</label>
-          <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple /> --}}
+          {{-- <label for="file">Gallery Images</label> --}}
+          {{-- <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple />  --}}
         </div>
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-6">
@@ -101,3 +101,22 @@
     </div>
   </div>
 </div>
+
+{{-- <script>
+        var galleryUploader = new qq.FineUploader({
+            element: document.getElementById("fine-uploader-gallery"),
+            template: 'qq-template-gallery',
+            request: {
+                endpoint: '/admin/gallery_upload'
+            },
+            thumbnails: {
+                placeholders: {
+                    waitingPath: "{{asset('js/fine-uploader/_build/placeholders/waiting-generic.png')}}",
+                    notAvailablePath: "{{asset('js//fine-uploader/_build/placeholders/not_available-generic.png')}}"
+                }
+            },
+            validation: {
+                allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+            }
+        });
+    </script> --}}

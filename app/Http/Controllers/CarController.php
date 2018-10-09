@@ -8,12 +8,14 @@ use Image;
 use File;
 use Session;
 use App\Brand;
+use Illuminate\Filesystem\Filesystem;
 
 class CarController extends Controller
 {
     public $username="API74";
     public $password="API74pass2";
     public $api_base="http://services.mobile.de/";
+    public $tmp_files = [];
 
 
     public function __constructor() {
@@ -354,40 +356,59 @@ class CarController extends Controller
       return redirect()->route('cars.list');
     }
 
+    // $tmp_files = [];
     public function uploadGallery(Request $request) {
-        $photos = $request->file('file');
+        $fs = new Filesystem();
+        $tmp_dir = public_path() . '/images/cars/tmp';
+        $image = $request->file('qqfile');
+        $filename = $request->qquuid . '.' . $image->getClientOriginalExtension();
+        File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
+        $fs->cleanDirectory($tmp_dir);
+        $location = public_path($tmp_dir . '/' . $filename);
+        Image::make($image)->save($location);
+        array_push($tmp_files, $location);
 
-        if (!is_array($photos)) {
-            $photos = [$photos];
-        }
+        // $msg = ['success' => true];
+        // $ret_msg = json_encode($msg);
 
-        if (!is_dir($this->photos_path)) {
-            mkdir($this->photos_path, 0777);
-        }
+        return Response::json(['success' => true], 200);
+        // return $ret_msg;
+        // echo 'REQUEST: ' . $request;
+        // die();
+        // $photos = $request->file('file');
+        // dd($photos);
 
-        for ($i = 0; $i < count($photos); $i++) {
-            $photo = $photos[$i];
-            $name = sha1(date('YmdHis') . str_random(30));
-            $save_name = $name . '.' . $photo->getClientOriginalExtension();
-            $resize_name = $name . str_random(2) . '.' . $photo->getClientOriginalExtension();
+        // if (!is_array($photos)) {
+        //     $photos = [$photos];
+        // }
+        //
+        // if (!is_dir($this->photos_path)) {
+        //     mkdir($this->photos_path, 0777);
+        // }
 
-            Image::make($photo)
-                ->resize(250, null, function ($constraints) {
-                    $constraints->aspectRatio();
-                })
-                ->save($this->photos_path . '/' . $resize_name);
-
-            $photo->move($this->photos_path, $save_name);
-
-            $upload = new Upload();
-            $upload->filename = $save_name;
-            $upload->resized_name = $resize_name;
-            $upload->original_name = basename($photo->getClientOriginalName());
-            $upload->save();
-        }
-        return Response::json([
-            'message' => 'Image saved Successfully'
-        ], 200);
+        // for ($i = 0; $i < count($photos); $i++) {
+        //     $photo = $photos[$i];
+        //     $name = sha1(date('YmdHis') . str_random(30));
+        //     $save_name = $name . '.' . $photo->getClientOriginalExtension();
+        //     $resize_name = $name . str_random(2) . '.' . $photo->getClientOriginalExtension();
+        //
+        //     Image::make($photo)
+        //         ->resize(250, null, function ($constraints) {
+        //             $constraints->aspectRatio();
+        //         })
+        //         ->save($this->photos_path . '/' . $resize_name);
+        //
+        //     $photo->move($this->photos_path, $save_name);
+        //
+        //     $upload = new Upload();
+        //     $upload->filename = $save_name;
+        //     $upload->resized_name = $resize_name;
+        //     $upload->original_name = basename($photo->getClientOriginalName());
+        //     $upload->save();
+        // }
+        // return Response::json([
+        //     'message' => 'Image saved Successfully'
+        // ], 200);
     }
 
     /**

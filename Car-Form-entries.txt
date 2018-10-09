@@ -1,0 +1,42 @@
+-----------------------What we need ------------------------------
+VINNumber					
+CarBrand					Volkswagen 
+Model						GOLF 
+MotorType						GTD		
+ShortAccessories 			DSG 19" PANO ACC CAM KEYLES DYNAUDIO black
+FuelType					
+GearboxType		
+Registration Year			08/2018
+Price						35402
+NetPrice					29750
+Mileage						15
+MotorCapacity				1968
+PowerBHP					184
+PowerKW						136
+DiscountPercent				20
+ConsumptionLiters			4,5
+Origin country				
+Emission Class				Euro 6
+Vehicle type						
+Status						
+ExteriorColor				
+InteriorColor				
+
+AdditionalEquipment			
+FurtherEquipment			
+**ActiveGalleryImages**			
+
+-----------------------What we have ------------------------------
+RefNr 
+Brand
+Model
+FuelType
+Exterior 
+Interior 
+CO2 Emmision 
+HP/KW 
+First Registration 
+KMs
+Price
+	
+
