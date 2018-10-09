@@ -370,9 +370,9 @@ class CarController extends Controller
         Image::make($image)->save($location);
         array_push($this->tmp_files, $location);
 
-        // $msg = ['success' => true];
-        // $ret_msg = json_encode($msg);
-        return $this->tmp_files;
+        $msg = ['success' => true];
+        $ret_msg = json_encode($msg);
+        // return $this->tmp_files;
         // return json_encode(['success' => true]);
 
         // return Response::json(['success' => true], 200);
