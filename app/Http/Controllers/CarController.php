@@ -372,6 +372,7 @@ class CarController extends Controller
 
         $msg = ['success' => true];
         $ret_msg = json_encode($msg);
+        return $ret_msg;
         // return $this->tmp_files;
         // return json_encode(['success' => true]);
 
