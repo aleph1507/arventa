@@ -2,7 +2,7 @@
 VINNumber					
 CarBrand					Volkswagen 
 Model						GOLF 
-MotorType						GTD		
+Type						GTD		
 ShortAccessories 			DSG 19" PANO ACC CAM KEYLES DYNAUDIO black
 FuelType					
 GearboxType		

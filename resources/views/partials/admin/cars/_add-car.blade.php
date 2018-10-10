@@ -8,21 +8,21 @@
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
-          <label for="refNr">Ref Nr</label>
-          <input type="number" name="refNr" class="form-control" id="refNr"
-            aria-describedby="refNr" value="{{ isset($car) ? $car->refNr : '' }}" required>
+          <label for="VIN">VIN</label>
+          <input type="number" name="VIN" class="form-control" id="VIN"
+            aria-describedby="VIN" value="{{ isset($car) ? $car->VIN : '' }}" required>
         </div>
         <div class="form-group">
           <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="brand">Brand</label>
-          </div>
-          <select class="custom-select" id="brand" name="brand">
-            @foreach($brands as $b)
-              <option value="{{$b->id}}"
-                {{ isset($car) ? ($b->id == $car->brand_id ? 'selected' : '') : '' }}>{{$b->name}}</option>
-            @endforeach
-          </select>
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="brand_id">Brand</label>
+            </div>
+            <select class="custom-select" id="brand_id" name="brand_id">
+              @foreach($brands as $b)
+                <option value="{{$b->id}}"
+                  {{ isset($car) ? ($b->id == $car->brand_id ? 'selected' : '') : '' }}>{{$b->name}}</option>
+              @endforeach
+            </select>
         </div>
         </div>
         <div class="form-group">
@@ -32,43 +32,126 @@
         </div>
         <div class="form-group">
           <label for="fuelType">Fuel Type</label>
-          <input type="text" name="fuelType" class="form-control" id="fuelType"
-            value="{{ isset($car) ? $car->fuelType : '' }}" placeholder="Fuel Type" required>
+          <select class="custom-select" id="fuelType" name="fuelType">
+            @foreach($fuelTypes as $ft)
+              <option value="{{$ft}}"
+                {{ isset($car) ? ($ft == $car->fuelType ? 'selected' : '') : '' }}>{{$ft}}</option>
+            @endforeach
+          </select>
         </div>
         <div class="form-group">
-          <label for="exterior">Exterior</label>
-          <input type="text" name="exterior" class="form-control" id="exterior"
-            value="{{ isset($car) ? $car->exterior : '' }}" placeholder="exterior" required>
+          <label for="engineType">Engine Type</label>
+          <select class="custom-select" id="engineType" name="engineType">
+            @foreach($engineTypes as $et)
+              <option value="{{$et}}"
+                {{ isset($car) ? ($et == $car->engineType ? 'selected' : '') : '' }}>{{$et}}</option>
+            @endforeach
+          </select>
         </div>
         <div class="form-group">
-          <label for="interior">Interior</label>
-          <input type="text" name="interior" class="form-control" id="interior"
-            value="{{ isset($car) ? $car->interior : '' }}" placeholder="interior" required>
+          <label for="shortAccessories">Short Accessories</label>
+          <input type="text" name="shortAccessories" class="form-control" id="shortAccessories"
+            value="{{ isset($car) ? $car->shortAccessories : '' }}" placeholder="shortAccessories" required>
         </div>
         <div class="form-group">
-          <label for="co2">CO2 Emmision</label>
-          <input type="text" name="co2" class="form-control" id="co2"
-            value="{{ isset($car) ? $car->co2 : '' }}" placeholder="CO2 Emmision">
+          <label for="gearboxType">Gearbox Type</label>
+          <select class="custom-select" id="gearboxType" name="gearboxType">
+            @foreach($gearboxTypes as $gt)
+              <option value="{{$gt}}"
+                {{ isset($car) ? ($gt == $car->gearboxType ? 'selected' : '') : '' }}>{{$gt}}</option>
+            @endforeach
+          </select>
         </div>
         <div class="form-group">
-          <label for="hpkw">HP/KW</label>
-          <input type="text" name="hpkw" class="form-control" id="hpkw"
-            value="{{ isset($car) ? $car->hpkw : '' }}" placeholder="HP/KW">
+          <label for="exteriorColor">Exterior Color</label>
+          <input type="text" name="exteriorColor" class="form-control" id="exteriorColor"
+            value="{{ isset($car) ? $car->exteriorColor : '' }}" placeholder="Exterior Color" required>
         </div>
         <div class="form-group">
-          <label for="firstRegistration">First Registration</label>
-          <input type="text" name="firstRegistration" class="form-control" id="firstRegistration"
-            value="{{ isset($car) ? $car->firstRegistration : '' }}" placeholder="First Registration">
+          <label for="interiorColor">Interior Color</label>
+          <input type="text" name="interiorColor" class="form-control" id="interiorColor"
+            value="{{ isset($car) ? $car->interiorColor : '' }}" placeholder="Interior Color" required>
         </div>
         <div class="form-group">
-          <label for="KMs">KMs</label>
-          <input type="text" name="KMs" class="form-control" id="KMs"
-            value="{{ isset($car) ? $car->KMs : '' }}" placeholder="Kilometers">
+          <label for="registrationYear">Registration Year</label>
+          <input type="text" name="registrationYear" class="form-control" id="registrationYear"
+            value="{{ isset($car) ? $car->registrationYear : '' }}" placeholder="Registration Year">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
           <input type="text" name="price" class="form-control" id="price"
             value="{{ isset($car) ? $car->price : '' }}" placeholder="Price">
+        </div>
+        <div class="form-group">
+          <label for="netprice">Net Price</label>
+          <input type="text" name="netprice" class="form-control" id="netprice"
+            value="{{ isset($car) ? $car->netprice : '' }}" placeholder="Net Price">
+        </div>
+        <div class="form-group">
+          <label for="mileage">Mileage</label>
+          <input type="text" name="mileage" class="form-control" id="mileage"
+            value="{{ isset($car) ? $car->mileage : '' }}" placeholder="Mileage">
+        </div>
+        <div class="form-group">
+          <label for="motorCapacity">Motor Capacity</label>
+          <input type="text" name="motorCapacity" class="form-control" id="motorCapacity"
+            value="{{ isset($car) ? $car->motorCapacity : '' }}" placeholder="Motor Capacity">
+        </div>
+        <div class="form-group">
+          <label for="powerBHP">Power BHP</label>
+          <input type="text" name="powerBHP" class="form-control" id="powerBHP"
+            value="{{ isset($car) ? $car->powerBHP : '' }}" placeholder="Power BHP">
+        </div>
+        <div class="form-group">
+          <label for="powerKW">Power KW</label>
+          <input type="text" name="powerKW" class="form-control" id="powerKW"
+            value="{{ isset($car) ? $car->powerKW : '' }}" placeholder="Power KW">
+        </div>
+        <div class="form-group">
+          <label for="discountPercent">Discount Percent</label>
+          <input type="text" name="discountPercent" class="form-control" id="discountPercent"
+            value="{{ isset($car) ? $car->discountPercent : '' }}" placeholder="Discount Percent">
+        </div>
+        <div class="form-group">
+          <label for="consumptionLiters">Consumption Liters</label>
+          <input type="text" name="consumptionLiters" class="form-control" id="consumptionLiters"
+            value="{{ isset($car) ? $car->consumptionLiters : '' }}" placeholder="Consumption Liters">
+        </div>
+        <div class="form-group">
+          <label for="originCountry">Origin Country</label>
+          <input type="text" name="originCountry" class="form-control" id="originCountry"
+            value="{{ isset($car) ? $car->originCountry : '' }}" placeholder="Origin Country">
+        </div>
+        <div class="form-group">
+          <label for="emmisionClass">emmisionClass</label>
+          <select class="custom-select" id="emmisionClass" name="emmisionClasses">
+            @foreach($emmisionClasses as $ec)
+              <option value="{{$ec}}"
+                {{ isset($car) ? ($ec == $car->emmisionClass ? 'selected' : '') : '' }}>{{$ec}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="vehicleType">Vehicle Type</label>
+          <input type="text" name="vehicleType" class="form-control" id="vehicleType"
+            value="{{ isset($car) ? $car->vehicleType : '' }}" placeholder="Vehicle Type">
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <input type="text" name="status" class="form-control" id="status"
+            value="{{ isset($car) ? $car->status : '' }}" placeholder="Status">
+        </div>
+        <div class="form-group">
+          <label for="additionalEquipment">Addition Equipment</label>
+          <textarea name="additionalEquipment" id="additionalEquipment"
+            placeholder="Additional Equipment" cols="30" class="form-control"
+            rows="10">{{isset($car) ? $car->additionalEquipment : ''}}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="furtherEquipment">Further Equipment</label>
+          <textarea name="furtherEquipment" id="furtherEquipment"
+            placeholder="Further Equipment" class="form-control" cols="30"
+            rows="10">{{isset($car) ? $car->furtherEquipment : ''}}</textarea>
         </div>
       </div>
       <div class="col-md-6 col-sm-12">

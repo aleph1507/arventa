@@ -18,8 +18,14 @@ class AdminController extends Controller
      */
     public function index()
     {
+      $engineTypes = ['GTD', 'TDI', 'V6', 'V8'];
+      $fuelTypes = ['Diesel', 'Petrol', 'Hybrid'];
+      $gearboxTypes = ['Automatic', 'Manual'];
+      $emmisionClasses = ['Euro 6', 'Euro 5', 'Euro 4', 'Euro 3', 'Euro 2', 'Euro 1'];
+
       $brands = Brand::all();
-      return view('admin.index')->with(compact('brands'));
+      return view('admin.index')->
+        with(compact('brands', 'engineTypes', 'fuelTypes', 'gearboxTypes', 'emmisionClasses'));
     }
 
     /**

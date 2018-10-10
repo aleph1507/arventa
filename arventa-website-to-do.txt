@@ -1,0 +1,37 @@
+TODO
+Create Static Pages
+	About
+	Our Team
+	Location
+	Clients
+	Contact
+	
+	Privacy:
+		General Terms And Conditions
+		Privacy Policy
+		F.A.Q.
+		Support
+		Confidentiality
+
+Multi Language Support: 
+	English
+	German
+	...
+		
+Backend
+	Select Featured cars
+	Select cars to be shown on Isotope
+	
+FrontEnd
+	Home
+		Fix Isotope
+		Fix Social Media Links
+		Remove all references to Carlink and Theme
+	Stock
+		Fix selector
+		Make Single car presenter more attractive
+		Fix Stocklist button
+	Single Car link
+		Remove login put price
+		
+		
