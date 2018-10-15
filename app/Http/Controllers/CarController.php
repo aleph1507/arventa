@@ -207,9 +207,9 @@ class CarController extends Controller
         // global $tmp_files;
         $fs = new Filesystem();
         $tmp_dir = public_path() . '/images/cars/tmp';
-        // $image = $request->file('qqfile');
-        // $filename = 'FIN' . $request->qquuid . '.' . $image->getClientOriginalExtension();
-        // File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
+        $image = $request->file('qqfile');
+        $filename = 'FIN' . $request->qquuid . '.' . $image->getClientOriginalExtension();
+        File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
         $fs->cleanDirectory($tmp_dir);
 
 
@@ -222,71 +222,6 @@ class CarController extends Controller
 
         $car->featuredimage = $filename;
       }
-
-      // $fillable = ['VIN', 'model', 'engineType', 'shortAccessories',
-      //   'fuelType', 'gearboxType', 'registrationYear', 'price',
-      //   'netprice', 'mileage', 'motorCapacity', 'powerBHP', 'powerKW',
-      //   'discountPercent', 'consumptionLiters', 'originCountry',
-      //   'emmisionClass', 'vehicleType', 'status', 'exteriorColor',
-      //   'interiorColor', 'additionalEquipment', 'furtherEquipment',
-      //   'featuredImage', 'galleryImages'];
-
-        // $this->validate($request, [
-        //   'refNr' => 'required',
-        //   'model' => 'required',
-        //   'fuelType' => 'required',
-        //   'exterior' => 'required',
-        //   'co2' => 'required',
-        //   'interior' => 'required',
-        //   'hpkw' => 'required',
-        //   'price' => 'required',
-        //   'featuredImage' => 'required|image'
-        // ]);
-        //
-        // $car->refNr = $request->refNr;
-        // $car->brand_id = $request->brand;
-        // $car->model = $request->model;
-        // $car->fuelType = $request->fuelType;
-        // $car->exterior = $request->exterior;
-        // $car->co2 = $request->co2;
-        // $car->interior = $request->interior;
-        // $car->hpkw = $request->hpkw;
-        // if($request->firstRegistration)
-        //   $car->firstRegistration = $request->firstRegistration;
-        // if($request->KMs)
-        //   $car->KMs = $request->KMs;
-        // $car->price = $request->price;
-        // if($request->hasFile('featuredImage')){
-        //   $image = $request->file('featuredImage');
-        //   $filename = time() . '.' . $image->getClientOriginalExtension();
-        //   File::exists(public_path() . '/images/cars') or File::makeDirectory(public_path() . '/images/cars', 0777, true);
-        //   $location = public_path('images/cars/' . $filename);
-        //   Image::make($image)->fit(800, 500)->save($location);
-        //
-        //   $car->featuredimage = $filename;
-        // }
-        //
-        // // $gallery_images = $request->file('file');
-        // $gallery_count = 0;
-        // $gallery_string = '';
-        //
-        // if($request->file){
-        //   foreach($request->file as $gi){
-        //     var_dump($gi);
-        //     $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
-        //     File::exists(public_path() . '/images/cars/' . $car->id . '/') or
-        //       File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/', 0777, true);
-
-            // if(!File::exists){
-            //   $location = public_path('images/cars/' . $car->id . '/' . $filename);
-            //   Image::make($gi)->fit(800, 500)->save($location);
-            //   $gallery_string .= $filename . ';';
-            //
-            // }
-        //   }
-        // }
-
-        // $car->galleryimages = $gallery_string;
 
         $car->save();
         Session::flash('success', 'This car was successfully saved.');
@@ -302,7 +237,9 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        return view('car.car')->with(compact('id', 'id'));
+        $car = Car::find($id);
+        print_r($car->model);
+        return view('car.car')->with(compact('car'));
         // $car = Car::find($id);
         // $galleryimages = [];
         // if(isset($car->galleryimages))

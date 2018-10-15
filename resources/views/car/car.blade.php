@@ -20,6 +20,10 @@
     <div class="row">
       @include('partials._car_specs')
     </div>
+    <hr class="horizontal-spacing">
+    <div class="row">
+      @include('partials._car_specs_further')
+    </div>
     <div class="row">
       @include('partials._special_cars')
     </div>
