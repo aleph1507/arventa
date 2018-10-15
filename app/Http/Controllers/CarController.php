@@ -195,7 +195,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-
+      $tmp_dir = public_path() . '/images/cars/tmp';
       // dd($request->all());
       $car = Car::create($request->only(['VIN', 'model', 'brand_id','engineType', 'shortAccessories',
         'fuelType', 'gearboxType', 'registrationYear', 'price',
@@ -205,12 +205,23 @@ class CarController extends Controller
         'interiorColor', 'additionalEquipment', 'furtherEquipment']));
 
         // global $tmp_files;
-        $fs = new Filesystem();
-        $tmp_dir = public_path() . '/images/cars/tmp';
-        $image = $request->file('qqfile');
-        $filename = 'FIN' . $request->qquuid . '.' . $image->getClientOriginalExtension();
-        File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
-        $fs->cleanDirectory($tmp_dir);
+        $gallery_files = scandir($tmp_dir);
+        if(count($gallery_files) > 0)
+          $car->galleryImages = '';
+        foreach($gallery_files as $ga){
+          if(strlen($ga) < 3)
+            continue;
+          File::exists(public_path() . '/images/cars/' . $car->id . '/gallery') or File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/gallery', 0777, true);
+          // $filename = time() . '.' . $image->getClientOriginalExtension();
+          $dest = public_path('images/cars/' . $car->id . '/' . 'gallery/' . $ga);
+          // print_r($tmp_dir . '/' . $ga);
+          // die();
+          copy($tmp_dir . '/' . $ga, $dest);
+          // Image::make($image)->fit(800, 500)->save($location);
+          $car->galleryImages .= $ga . ';';
+        }
+        // print_r($gallery_files);
+        // die();
 
 
       if($request->hasFile('featuredImage')){
@@ -220,11 +231,18 @@ class CarController extends Controller
         $location = public_path('images/cars/' . $car->id . '/' . $filename);
         Image::make($image)->fit(800, 500)->save($location);
 
-        $car->featuredimage = $filename;
+        $car->featuredImage = $filename;
       }
 
         $car->save();
         Session::flash('success', 'This car was successfully saved.');
+
+        $fs = new Filesystem();
+        // $tmp_dir = public_path() . '/images/cars/tmp';
+        // $image = $request->file('qqfile');
+        // $filename = 'FIN' . $request->qquuid . '.' . $image->getClientOriginalExtension();
+        // File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
+        $fs->cleanDirectory($tmp_dir);
 
         return redirect()->route('admin.index');
     }
