@@ -896,6 +896,27 @@ a.div-a {
   margin-bottom: 5%;
 }
 
+.thumb-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: auto;
+  max-width: 100%;
+  /* max-height: 40vh; */
+  /* border: inset 5px grey; */
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: 90vw; */
+  /* width: 100%;
+  max-height:
+  overflow: auto; */
+}
+
+/* .thumb-gallery img {
+  display: inline;
+} */
+
 @media (max-width: 768px) {
   #full-options {
     webkit-column-count: 2;

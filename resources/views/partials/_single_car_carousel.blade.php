@@ -1,14 +1,24 @@
 <div id="singleCarCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{{asset('images/car/02.jpg')}}" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('images/car/02.jpg')}}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('images/car/02.jpg')}}" alt="Third slide">
-    </div>
+    <?php
+      $gals = explode(';', $car->galleryImages);
+      array_pop($gals);
+      // print_r($gals);
+      // array_unshift($gals, $car->featuredImage);
+      $ac = 0;
+    ?>
+
+    {{-- <div class="carousel-item active">
+      <img src="{{asset('images/cars/' . $car->id . '/' . $car->featuredImage)}}"
+       alt="{{$car->model}}" class="d-block w-100">
+    </div> --}}
+    @foreach($gals as $gal)
+      <div class="carousel-item {{$ac == 0 ? 'active' : ''}}">
+        <img src="{{asset('images/cars/' . $car->id . '/' . 'gallery/' . $gal)}}"
+         alt="{{$car->model}}" class="d-block w-100">
+      </div>
+      <?php $ac++; ?>
+    @endforeach
   </div>
   <a class="carousel-control-prev" href="#singleCarCarousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -20,17 +30,11 @@
   </a>
 </div>
 
-<div id="carousel-status" class="carousel-static row spacing-top">
-  <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{asset('images/car/car_slider_thumb1.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
-  </div>
-  <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{asset('images/car/car_slider_thumb2.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
-  </div>
-  <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{asset('images/car/car_slider_thumb3.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
-  </div>
-  <div class="col-xs-3 col-md-3 sm-spacing">
-    <img src="{{asset('images/car/car_slider_thumb4.jpg')}}" alt="" class="d-none d-md-block w-100 img-fluid">
-  </div>
+<div id="carousel-status" class="carousel-static row spacing-top thumb-gallery">
+  @foreach($gals as $gal)
+    <div class="col-xs-3 col-md-3 sm-spacing">
+      <img src="{{asset('images/cars/' . $car->id . '/' . 'gallery/' . $gal)}}"
+       alt="{{$car->model}}" class="d-none d-md-block w-100 img-fluid">
+    </div>
+  @endforeach
 </div>
