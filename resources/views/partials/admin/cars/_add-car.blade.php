@@ -7,52 +7,88 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        <div class="form-group">
-          <label for="VIN">VIN</label>
-          <input type="number" name="VIN" class="form-control" id="VIN"
-            aria-describedby="VIN" value="{{ isset($car) ? $car->VIN : '' }}" required>
-        </div>
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="brand_id">Brand</label>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseMain">Main</a>
+              </h4>
             </div>
-            <select class="custom-select" id="brand_id" name="brand_id">
-              @foreach($brands as $b)
-                <option value="{{$b->id}}"
-                  {{ isset($car) ? ($b->id == $car->brand_id ? 'selected' : '') : '' }}>{{$b->name}}</option>
-              @endforeach
-            </select>
+            <div id="collapseMain" class="panel-collapse collapse">
+              <div class="form-group">
+                <label for="VIN">VIN</label>
+                <input type="number" name="VIN" class="form-control" id="VIN"
+                  aria-describedby="VIN" value="{{ isset($car) ? $car->VIN : '' }}" required>
+              </div>
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="brand_id">Brand</label>
+                  </div>
+                  <select class="custom-select" id="brand_id" name="brand_id">
+                    @foreach($brands as $b)
+                      <option value="{{$b->id}}"
+                        {{ isset($car) ? ($b->id == $car->brand_id ? 'selected' : '') : '' }}>{{$b->name}}</option>
+                    @endforeach
+                  </select>
+              </div>
+              </div>
+              <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" name="model" class="form-control" id="model"
+                  value="{{ isset($car) ? $car->model : '' }}" placeholder="model" required>
+              </div>
+              <div class="form-group">
+                <label for="fuelType">Fuel Type</label>
+                <select class="custom-select" id="fuelType" name="fuelType">
+                  @foreach($fuelTypes as $ft)
+                    <option value="{{$ft}}"
+                      {{ isset($car) ? ($ft == $car->fuelType ? 'selected' : '') : '' }}>{{$ft}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="engineType">Engine Type</label>
+                <select class="custom-select" id="engineType" name="engineType">
+                  @foreach($engineTypes as $et)
+                    <option value="{{$et}}"
+                      {{ isset($car) ? ($et == $car->engineType ? 'selected' : '') : '' }}>{{$et}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="shortAccessories">Short Accessories</label>
+                <input type="text" name="shortAccessories" class="form-control" id="shortAccessories"
+                  value="{{ isset($car) ? $car->shortAccessories : '' }}" placeholder="shortAccessories" required>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseMotor">Motor</a>
+              </h4>
+            </div>
+            <div id="collapseMotor" class="panel-collapse collapse">
+
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="model">Model</label>
-          <input type="text" name="model" class="form-control" id="model"
-            value="{{ isset($car) ? $car->model : '' }}" placeholder="model" required>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseEquipment">Equipment</a>
+              </h4>
+            </div>
+            <div id="collapseEquipment" class="panel-collapse collapse">
+
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="fuelType">Fuel Type</label>
-          <select class="custom-select" id="fuelType" name="fuelType">
-            @foreach($fuelTypes as $ft)
-              <option value="{{$ft}}"
-                {{ isset($car) ? ($ft == $car->fuelType ? 'selected' : '') : '' }}>{{$ft}}</option>
-            @endforeach
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="engineType">Engine Type</label>
-          <select class="custom-select" id="engineType" name="engineType">
-            @foreach($engineTypes as $et)
-              <option value="{{$et}}"
-                {{ isset($car) ? ($et == $car->engineType ? 'selected' : '') : '' }}>{{$et}}</option>
-            @endforeach
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="shortAccessories">Short Accessories</label>
-          <input type="text" name="shortAccessories" class="form-control" id="shortAccessories"
-            value="{{ isset($car) ? $car->shortAccessories : '' }}" placeholder="shortAccessories" required>
-        </div>
+
         <div class="form-group">
           <label for="gearboxType">Gearbox Type</label>
           <select class="custom-select" id="gearboxType" name="gearboxType">
@@ -155,17 +191,53 @@
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
-        <div class="form-group">
-          <label for="featuredImage">Featured Image</label>
-          <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
-        </div>
-        <div class="form-group">
-          <div id="fine-uploader-gallery">
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapsePrice">Price</a>
+              </h4>
+            </div>
+            <div id="collapsePrice" class="panel-collapse collapse">
 
+            </div>
           </div>
-          {{-- <label for="file">Gallery Images</label> --}}
-          {{-- <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple />  --}}
         </div>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseAdditional">Additional</a>
+              </h4>
+            </div>
+            <div id="collapseAdditional" class="panel-collapse collapse">
+
+            </div>
+          </div>
+        </div>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseImages">Images</a>
+              </h4>
+            </div>
+            <div id="collapseImages" class="panel-collapse collapse">
+              <div class="form-group">
+                <label for="featuredImage">Featured Image</label>
+                <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
+              </div>
+              <div class="form-group">
+                <div id="fine-uploader-gallery">
+
+                </div>
+                {{-- <label for="file">Gallery Images</label> --}}
+                {{-- <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple />  --}}
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-6">
             <button type="submit" class="btn btn-primary">Submit</button>

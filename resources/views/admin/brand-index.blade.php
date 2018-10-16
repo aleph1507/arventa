@@ -3,8 +3,8 @@
 @section('content')
   @include('partials.admin.brands._add-brand')
 
-  <div class="container">
-    <table class="table table-hover table-striped table-bordered table-dark" style="margin-top:5%;">
+  <div class="col-md-6 col-sm-12">
+    <table class="table table-hover table-striped table-bordered table-light" style="margin-top:5%;">
     <thead>
       <tr>
         <th scope="col">Brand Name</th>
