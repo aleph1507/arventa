@@ -49,6 +49,29 @@
 
 <script src="{{asset('js/scripts.js')}}"></script>
 
+<script src="{{asset('js/lightGallery/js/lightgallery-all.min.js')}}"></script>
+
+<script src="{{asset('js/lightSlider/js/lightslider.min.js')}}"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#imageGallery').lightSlider({
+      gallery:true,
+      item:1,
+      loop:true,
+      thumbItem:9,
+      slideMargin:0,
+      enableDrag: false,
+      currentPagerPosition:'left',
+      onSliderLoad: function(el) {
+          el.lightGallery({
+              selector: '#imageGallery .lslide'
+          });
+      }
+    });
+  });
+</script>
+
 <script>
   $(document).ready(function() {
     var filterCol = $("#filter-col");
