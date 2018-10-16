@@ -3,7 +3,7 @@
 
   <div id="full-options" style="margin-bottom: 2rem;">
   	<ul class="standard-sum">
-      {!! $car->additionalEquipment !!}
+      {!! $car->furtherEquipment !!}
     	{{-- <li>New, EU Car</li>
     	<li>No registration</li>
     	<li>COC document</li>

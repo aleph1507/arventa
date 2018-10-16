@@ -29,7 +29,41 @@ window.addEventListener('load', function() {
   //
   // }
 
-  
+  function splitEquipment(eq){
+    var t = '';
+    var l = $(eq).val().split('\n');
+    for(i = 0; i<l.length; i++){
+      t+='<li>';
+      t+=l[i];
+      t+='</li>';
+    }
+
+    return t;
+  }
+
+  var carForm = document.getElementById('car_form');
+  if(carForm != null){
+    var cfSubmit = document.getElementById('car_form_submit');
+    var addEq = document.getElementById('additionalEquipment');
+    var furtherEq = document.getElementById('furtherEquipment');
+    cfSubmit.addEventListener('click', function(e) {
+      e.preventDefault();
+      // var t = '';
+      // var l = $(addEq).val().split('\n');
+      // for(i = 0; i<l.length; i++){
+      //   t+='<li>';
+      //   t+=l[i];
+      //   t+='</li>';
+      // }
+      // $(addEq).val(t);
+      $(addEq).val(splitEquipment(addEq));
+      $(furtherEq).val(splitEquipment(furtherEq));
+      carForm.submit();
+    });
+  }
+
+
+
   var galleryUploader = new qq.FineUploader({
       element: document.getElementById("fine-uploader-gallery"),
       template: 'qq-template-gallery',
