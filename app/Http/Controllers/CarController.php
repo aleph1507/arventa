@@ -212,17 +212,11 @@ class CarController extends Controller
           if(strlen($ga) < 3)
             continue;
           File::exists(public_path() . '/images/cars/' . $car->id . '/gallery') or File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/gallery', 0777, true);
-          // $filename = time() . '.' . $image->getClientOriginalExtension();
           $dest = public_path('images/cars/' . $car->id . '/' . 'gallery/' . $ga);
-          // print_r($tmp_dir . '/' . $ga);
-          // die();
-          copy($tmp_dir . '/' . $ga, $dest);
-          // Image::make($image)->fit(800, 500)->save($location);
+          // copy($tmp_dir . '/' . $ga, $dest);
+          Image::make($tmp_dir . '/' . $ga)->fit(768, 576)->save($dest);
           $car->galleryImages .= $ga . ';';
         }
-        // print_r($gallery_files);
-        // die();
-
 
       if($request->hasFile('featuredImage')){
         $image = $request->file('featuredImage');
@@ -238,10 +232,6 @@ class CarController extends Controller
         Session::flash('success', 'This car was successfully saved.');
 
         $fs = new Filesystem();
-        // $tmp_dir = public_path() . '/images/cars/tmp';
-        // $image = $request->file('qqfile');
-        // $filename = 'FIN' . $request->qquuid . '.' . $image->getClientOriginalExtension();
-        // File::exists($tmp_dir) or File::makeDirectory($tmp_dir, 0777, true);
         $fs->cleanDirectory($tmp_dir);
 
         return redirect()->route('admin.index');
@@ -258,11 +248,6 @@ class CarController extends Controller
         $car = Car::find($id);
         print_r($car->model);
         return view('car.car')->with(compact('car'));
-        // $car = Car::find($id);
-        // $galleryimages = [];
-        // if(isset($car->galleryimages))
-        //   $galleryimages = explode(';', $car->galleryimages);
-        // return view('cars.show')->with(compact('car', 'galleryimages'));
     }
 
     /**
