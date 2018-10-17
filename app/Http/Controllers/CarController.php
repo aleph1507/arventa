@@ -154,22 +154,34 @@ class CarController extends Controller
     public function duplicate($id){
       $c = Car::find($id);
       $car = new Car();
-      $car->refNr = $c->refNr;
+      $car->VIN = $c->VIN;
       $car->brand_id = $c->brand_id;
       $car->model = $c->model;
+      $car->engineType = $c->engineType;
+      $car->shortAccessories = $c->shortAccessories;
       $car->fuelType = $c->fuelType;
-      $car->exterior = $c->exterior;
-      $car->co2 = $c->co2;
-      $car->interior = $c->interior;
-      $car->hpkw = $c->hpkw;
-      if($c->firstRegistration)
-        $car->firstRegistration = $c->firstRegistration;
-      if($c->KMs)
-        $car->KMs = $c->KMs;
+      $car->gearboxType = $c->gearboxType;
+      $car->registrationYear = $c->registrationYear;
       $car->price = $c->price;
-      $car->featuredimage = $c->featuredimage;
-      $car->galleryimages = $c->galleryimages;
+      $car->netprice = $c->netprice;
+      $car->mileage = $c->mileage;
+      $car->motorCapacity = $c->motorCapacity;
+      $car->powerBHP = $c->powerBHP;
+      $car->powerKW = $c->powerKW;
+      $car->discountPercent = $c->discountPercent;
+      $car->consumptionLiters = $c->consumptionLiters;
+      $car->originCountry = $c->originCountry;
+      $car->emmisionClass = $c->emmisionClass;
+      $car->vehicleType = $c->vehicleType;
+      $car->status = $c->status;
+      $car->exteriorColor = $c->exteriorColor;
+      $car->interiorColor = $c->interiorColor;
+      $car->additionalEquipment = $c->additionalEquipment;
+      $car->furtherEquipment = $c->furtherEquipment;
+      $car->featuredImage = $c->featuredImage;
+      $car->galleryImages = $c->galleryImages;
 
+      
       $car->save();
 
       $cars = Car::all();
