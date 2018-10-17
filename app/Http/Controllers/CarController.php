@@ -258,8 +258,8 @@ class CarController extends Controller
     public function show($id)
     {
         $car = Car::find($id);
-        print_r($car->model);
-        return view('car.car')->with(compact('car'));
+        $specialCars = Car::orderBy('created_at', 'desc')->take(4)->get();
+        return view('car.car')->with(compact('car', 'specialCars'));
     }
 
     /**

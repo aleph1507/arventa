@@ -71,6 +71,15 @@
               value="{{ isset($car) ? $car->exteriorColor : '' }}" placeholder="Exterior Color" required>
           </div>
         </div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="interiorColor">Interior Color</label>
+            </div>
+            <input type="text" name="interiorColor" class="form-control" id="interiorColor"
+              value="{{ isset($car) ? $car->interiorColor : '' }}" placeholder="Interior Color" required>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">

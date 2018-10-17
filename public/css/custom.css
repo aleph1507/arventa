@@ -74,6 +74,10 @@
   color: #fff;
 }
 
+#singleCarCarousel img {
+  width: 100%;
+}
+
 .carousel-item .carousel-caption {
   margin-bottom:10%;
 }
