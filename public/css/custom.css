@@ -896,6 +896,10 @@ a.div-a {
   margin-bottom: 5%;
 }
 
+#singleCarCarousel ul li {
+  list-style: square outside;
+}
+
 .thumb-gallery {
   display: flex;
   flex-direction: row;
