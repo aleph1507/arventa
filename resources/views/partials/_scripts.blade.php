@@ -59,9 +59,12 @@
       gallery:true,
       item:1,
       loop:true,
-      thumbItem:9,
+      // thumbItem:9,
+      // vertical:true,
+      // verticalHeight:295,
+      // vThumbWidth:50,
       slideMargin:0,
-      enableDrag: false,
+      enableDrag: true,
       currentPagerPosition:'left',
       onSliderLoad: function(el) {
           el.lightGallery({

@@ -29,19 +29,19 @@
   </ul>
 </div>
 
-<div id="singleCarCarousel" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+{{-- <div id="singleCarCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner"> --}}
 
     {{-- <div class="carousel-item active">
       <img src="{{asset('images/cars/' . $car->id . '/' . $car->featuredImage)}}"
        alt="{{$car->model}}" class="d-block w-100">
     </div> --}}
-    @foreach($gals as $gal)
+    {{-- @foreach($gals as $gal)
       <div class="carousel-item {{$ac == 0 ? 'active' : ''}}">
         <img src="{{asset('images/cars/' . $car->id . '/' . 'gallery/' . $gal)}}"
          alt="{{$car->model}}" class="d-block w-100">
       </div>
-      <?php $ac++; ?>
+      < $ac++; ?>
     @endforeach
   </div>
   <a class="carousel-control-prev" href="#singleCarCarousel" role="button" data-slide="prev">
@@ -52,7 +52,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div> --}}
 {{-- <div class="container">
   <div id="carousel-status" style="margin:auto;" class="text-center carousel-static row spacing-top thumb-gallery">
     @foreach($gals as $gal)
