@@ -132,7 +132,7 @@ class CarController extends Controller
     {
         $cars = Car::all();
         // $getAll = $this->getAll();
-        return view('cars.stocklist')->with(compact('cars', 'cars'));
+        return view('cars.stocklist')->with(compact('cars'));
     }
 
     public function indexL2()
@@ -181,7 +181,7 @@ class CarController extends Controller
       $car->featuredImage = $c->featuredImage;
       $car->galleryImages = $c->galleryImages;
 
-      
+
       $car->save();
 
       $cars = Car::all();
@@ -272,7 +272,13 @@ class CarController extends Controller
     {
         $car = Car::find($id);
         $brands = Brand::all();
-        return view('admin.car-edit')->with(compact('car', 'brands'));
+        $engineTypes = ['GTD', 'TDI', 'V6', 'V8'];
+        $fuelTypes = ['Diesel', 'Petrol', 'Hybrid'];
+        $gearboxTypes = ['Automatic', 'Manual'];
+        $emmisionClasses = ['Euro 6', 'Euro 5', 'Euro 4', 'Euro 3', 'Euro 2', 'Euro 1'];
+
+        return view('admin.car-edit')->with(compact('car', 'brands', 'engineTypes',
+            'fuelTypes', 'gearboxTypes', 'emmisionClasses'));
     }
 
     /**
