@@ -213,8 +213,8 @@ class CarController extends Controller
             continue;
           File::exists(public_path() . '/images/cars/' . $car->id . '/gallery') or File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/gallery', 0777, true);
           $dest = public_path('images/cars/' . $car->id . '/' . 'gallery/' . $ga);
-          // copy($tmp_dir . '/' . $ga, $dest);
-          Image::make($tmp_dir . '/' . $ga)->fit(998, 748)->save($dest);
+          // copy($tmp_dir . '/' . $ga, $dest);1013  921, 691
+          Image::make($tmp_dir . '/' . $ga)->fit(1013, 691)->save($dest);
           $car->galleryImages .= $ga . ';';
         }
 
