@@ -1,67 +1,40 @@
-<div class="card mb-3">
-  <div class="card-header">
-    <i class="fa fa-table"></i> All Cars </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th>Ref Nr</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Fuel Type</th>
-            <th>Exterior</th>
-            <th>Interior</th>
-            <th>CO2</th>
-            <th>HP/KW</th>
-            <th>First Registration</th>
-            <th>KMs</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>Ref Nr</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Fuel Type</th>
-            <th>Exterior</th>
-            <th>Interior</th>
-            <th>CO2</th>
-            <th>HP/KW</th>
-            <th>First Registration</th>
-            <th>KMs</th>
-            <th>Price</th>
-          </tr>
-        </tfoot>
-        <tbody>
-          @foreach($cars as $c)
-            <tr>
-              <td>{{$c->refNr}}</td>
-              <td>{{$c->brand->name}}</td>
-              <td>{{$c->model}}</td>
-              <td>{{$c->fuelType}}</td>
-              <td>{{$c->exterior}}</td>
-              <td>{{$c->interior}}</td>
-              <td>{{$c->co2}}</td>
-              <td>{{$c->hpkw}}</td>
-              <td>{{ isset($c->firstRegistration) ? $c->firstRegistration : '-' }}</td>
-              <td>{{ isset($c->KMs) ? $c->KMs : '-' }}</td>
-              <td>{{$c->price}}</td>
-              <td>
-                <a href="{{route('cars.edit', $c->id)}}" class="btn btn-outline-dark btn-sm">Edit</a>
-                <form action="{{route('cars.duplicate', $c->id)}}" method="post">
-                  {{csrf_field()}}
-                  <input type="submit" class="btn btn-outline-dark btn-sm" value="Duplicate">
-                </form>
-                {{-- <a href="{{route('cars.duplicate', $c->id)}}" class="btn btn-outline-dark btn-sm">Duplicate</a> --}}
-              </td>
-            </tr>
-          @endforeach
-        </tbody>
-      </table>
+<div class="card-deck">
+  @foreach($cars as $c)
+  <div class="col-md-3">
+    <div class="card" style= "margin:0">
+      <img class="card-img-top" src="{{asset('images/cars/'.$c->id."/". $c->featuredImage)}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{$c->brand->name}} {{$c->model}}</h5>
+        <ul style="list-style: none">
+          <li>VIN: {{$c->VIN}}</li>
+          <li>Price: {{$c->price}}</li>
+          <li>Accessories: {{ isset($c->shortAccessories) ? $c->shortAccessories : '-' }}</li-->
+          <!--li>KMs: {{ isset($c->KMs) ? $c->KMs : '-' }}</li-->
+          <!--li>{{$c->hpkw}}</li-->
+          <!--li>{{$c->fuelType}}</li-->
+          <!--li>{{$c->exterior}}</li-->
+          <!--li>{{$c->interior}}</li-->
+          <!--li>{{$c->co2}}</li-->
+          <!--li>{{ isset($c->firstRegistration) ? $c->firstRegistration : '-' }}</li-->
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <a href="{{route('cars.edit', $c->id)}}" class="btn btn-primary btn-sm" style = "margin:5px">Edit</a>
+          <form action="{{route('cars.duplicate', $c->id)}}" method="post">
+            {{csrf_field()}}
+            <input type="submit" class="btn btn-info btn-sm" style = "margin:5px" value="Duplicate">
+          </form>
+          {{-- <a href="{{route('cars.duplicate', $c->id)}}" class="btn btn-outline-dark btn-sm" style = "margin:5px">Duplicate</a> --}}
+          <form action="{{route('cars.delete', $c->id)}}" method="post">
+            {{csrf_field()}}
+            <input type="submit" class="btn btn-danger btn-sm" style = "margin:5px" value="Delete">
+          </form>
+          {{-- <a href="{{route('cars.delete', $c->id)}}" class="btn btn-danger btn-sm" style = "margin:5px">Delete</a>--}}
+        </div>
+      </div>
     </div>
   </div>
-  <div class="card-footer small text-muted">All Cars List</div>
-</div>
+  @endforeach
+
 </div>

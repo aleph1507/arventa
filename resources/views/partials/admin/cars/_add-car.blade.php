@@ -38,88 +38,43 @@
               value="{{ isset($car) ? $car->model : '' }}" placeholder="model" required>
           </div>
         </div>
-        <div class="panel-group">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapseMain">Main</a>
-              </h4>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="engineType">Engine Type</label>
             </div>
-            <div id="collapseMain" class="panel-collapse collapse">
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="VIN">VIN</label>
-                  </div>
-                  <input type="number" name="VIN" class="form-control" id="VIN"
-                    aria-describedby="VIN" value="{{ isset($car) ? $car->VIN : '' }}" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="brand_id">Brand</label>
-                  </div>
-                  <select class="custom-select" id="brand_id" name="brand_id">
-                    @foreach($brands as $b)
-                      <option value="{{$b->id}}"
-                        {{ isset($car) ? ($b->id == $car->brand_id ? 'selected' : '') : '' }}>{{$b->name}}</option>
-                    @endforeach
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="model">Model</label>
-                  </div>
-                  <input type="text" name="model" class="form-control" id="model"
-                    value="{{ isset($car) ? $car->model : '' }}" placeholder="model" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="engineType">Engine Type</label>
-                  </div>
-                  <select class="custom-select" id="engineType" name="engineType">
-                    @foreach($engineTypes as $et)
-                      <option value="{{$et}}"
-                        {{ isset($car) ? ($et == $car->engineType ? 'selected' : '') : '' }}>{{$et}}</option>
-                    @endforeach
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="shortAccessories">Short Accessories</label>
-                  </div>
-                  <input type="text" name="shortAccessories" class="form-control" id="shortAccessories"
-                    value="{{ isset($car) ? $car->shortAccessories : '' }}" placeholder="shortAccessories" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="exteriorColor">Exterior Color</label>
-                  </div>
-                  <input type="text" name="exteriorColor" class="form-control" id="exteriorColor"
-                    value="{{ isset($car) ? $car->exteriorColor : '' }}" placeholder="Exterior Color" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="interiorColor">Interior Color</label>
-                  </div>
-                  <input type="text" name="interiorColor" class="form-control" id="interiorColor"
-                    value="{{ isset($car) ? $car->interiorColor : '' }}" placeholder="Interior Color" required>
-                </div>
-              </div>
-            </div>
+            <select class="custom-select" id="engineType" name="engineType">
+              @foreach($engineTypes as $et)
+                <option value="{{$et}}"
+                  {{ isset($car) ? ($et == $car->engineType ? 'selected' : '') : '' }}>{{$et}}</option>
+              @endforeach
+            </select>
           </div>
         </div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="shortAccessories">Short Accessories</label>
+            </div>
+            <input type="text" name="shortAccessories" class="form-control" id="shortAccessories"
+              value="{{ isset($car) ? $car->shortAccessories : '' }}" placeholder="shortAccessories" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="exteriorColor">Exterior Color</label>
+            </div>
+            <input type="text" name="exteriorColor" class="form-control" id="exteriorColor"
+              value="{{ isset($car) ? $car->exteriorColor : '' }}" placeholder="Exterior Color" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
         <div class="panel-group">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -232,47 +187,8 @@
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-6">
-            <button type="submit" id="car_form_submit" class="btn btn-primary">Submit</button>
-          </div>
-          <div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-          </div>
-        </div>
       </div>
       <div class="col-md-6 col-sm-12">
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="engineType">Engine Type</label>
-            </div>
-            <select class="custom-select" id="engineType" name="engineType">
-              @foreach($engineTypes as $et)
-                <option value="{{$et}}"
-                  {{ isset($car) ? ($et == $car->engineType ? 'selected' : '') : '' }}>{{$et}}</option>
-              @endforeach
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="shortAccessories">Short Accessories</label>
-            </div>
-            <input type="text" name="shortAccessories" class="form-control" id="shortAccessories"
-              value="{{ isset($car) ? $car->shortAccessories : '' }}" placeholder="shortAccessories" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="exteriorColor">Exterior Color</label>
-            </div>
-            <input type="text" name="exteriorColor" class="form-control" id="exteriorColor"
-              value="{{ isset($car) ? $car->exteriorColor : '' }}" placeholder="Exterior Color" required>
-          </div>
-        </div>
         <div class="panel-group">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -390,16 +306,22 @@
           </div>
         </div>
         </form>
-        @if(isset($car))
-          <form action="{{route('cars.delete', $car->id)}}" method="post">
-            {{csrf_field()}}
-
-            <input type="submit" class="btn btn-danger mt-5 mt-sm-0" value="Delete">
-          </form>
-        @endif
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <button type="submit" id="car_form_submit" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+      </div>
+    </div>
+    @if(isset($car))
+      <form action="{{route('cars.delete', $car->id)}}" method="post">
+        {{csrf_field()}}
 
+        <input type="submit" class="btn btn-danger mt-5 mt-sm-0" value="Delete">
+      </form>
+    @endif
     </div>
   </div>
 </div>
