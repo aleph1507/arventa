@@ -291,36 +291,49 @@ class CarController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, [
-        'refNr' => 'required',
+        'VIN' => 'required',
         'model' => 'required',
+        'brand_id' => 'required',
         'fuelType' => 'required',
-        'exterior' => 'required',
-        'co2' => 'required',
-        'interior' => 'required',
-        'hpkw' => 'required',
+        'exteriorColor' => 'required',
+        'powerBHP' => 'required',
         'price' => 'required',
-        // 'featuredImage' => 'required|image'
+        'featuredImage' => 'required|image'
       ]);
 
       $car = Car::find($id);
-      $car->refNr = $request->refNr;
-      $car->brand_id = $request->brand;
+      $car->VIN = $request->VIN;
+      $car->brand_id = $request->brand_id;
       $car->model = $request->model;
+      $car->engineType = $request->engineType;
+      $car->shortAccessories = $request->shortAccessories;
       $car->fuelType = $request->fuelType;
-      $car->exterior = $request->exterior;
-      $car->co2 = $request->co2;
-      $car->interior = $request->interior;
-      $car->hpkw = $request->hpkw;
-      if($request->firstRegistration)
-        $car->firstRegistration = $request->firstRegistration;
-      if($request->KMs)
-        $car->KMs = $request->KMs;
+      $car->gearboxType = $request->gearboxType;
+      $car->registrationYear = $request->registrationYear;
       $car->price = $request->price;
+      $car->netprice = $request->netprice;
+      $car->mileage = $request->mileage;
+      $car->motorCapacity = $request->motorCapacity;
+      $car->powerBHP = $request->powerBHP;
+      $car->powerKW = $request->powerKW;
+      $car->discountPercent = $request->discountPercent;
+      $car->consumptionLiters = $request->consumptionLiters;
+      $car->originCountry = $request->originCountry;
+      $car->emmisionClass = $request->emmisionClass;
+      $car->vehicleType = $request->vehicleType;
+      $car->status = $request->status;
+      $car->exteriorColor = $request->exteriorColor;
+      $car->interiorColor = $request->interiorColor;
+      $car->additionalEquipment = $request->additionalEquipment;
+      $car->furtherEquipment = $request->furtherEquipment;
+      $car->featuredImage = $request->featuredImage;
+      $car->galleryImages = $request->galleryImages;
+
       if($request->hasFile('featuredImage')){
         $image = $request->file('featuredImage');
         $filename = time() . '.' . $image->getClientOriginalExtension();
-        File::exists(public_path() . '/images/cars') or File::makeDirectory(public_path() . '/images/cars', 0777, true);
-        $location = public_path('images/cars/' . $filename);
+        File::exists(public_path() . '/images/cars/'.$car->id."/") or File::makeDirectory(public_path() . '/images/cars/'.$car->id."/", 0777, true);
+        $location = public_path('images/cars/'.$car->id."/" . $filename);
         Image::make($image)->fit(800, 500)->save($location);
 
         $car->featuredimage = $filename;

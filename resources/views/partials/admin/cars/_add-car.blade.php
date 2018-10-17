@@ -150,7 +150,7 @@
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="emmisionClass">Emmision Class</label>
                   </div>
-                  <select class="custom-select" id="emmisionClass" name="emmisionClasses">
+                  <select class="custom-select" id="emmisionClass" name="emmisionClass">
                     @foreach($emmisionClasses as $ec)
                       <option value="{{$ec}}"
                         {{ isset($car) ? ($ec == $car->emmisionClass ? 'selected' : '') : '' }}>{{$ec}}</option>
@@ -308,20 +308,15 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-6">
-        <button type="submit" id="car_form_submit" class="btn btn-primary">Submit</button>
+      <div class="row">
+          <button type="submit" id="car_form_submit" class="btn btn-primary" style = "margin:0 5px 0 5px">Submit</button>
+          @if(isset($car))
+            <form action="{{route('cars.delete', $car->id)}}" method="post">
+              {{csrf_field()}}
+              <input type="submit" class="btn btn-danger" style = "margin:0 5px 0 5px" value="Delete">
+            </form>
+          @endif
       </div>
-      <div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-      </div>
-    </div>
-    @if(isset($car))
-      <form action="{{route('cars.delete', $car->id)}}" method="post">
-        {{csrf_field()}}
-
-        <input type="submit" class="btn btn-danger mt-5 mt-sm-0" value="Delete">
-      </form>
-    @endif
     </div>
   </div>
 </div>
