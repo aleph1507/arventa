@@ -20,15 +20,15 @@
 
   {{-- @include('partials._latest_news') --}}
 
-  <div class="margin-btn" style="margin-bottom:3em;">
+  <!--div class="margin-btn" style="margin-bottom:3em;"-->
     {{-- @include('partials._content_box') --}}
-  </div>
+  <!--/div-->
 
-  <div class="margin-btn" style="margin-bottom:3em;">
+  <!--div class="margin-btn" style="margin-bottom:3em;"-->
     {{-- @include('partials._play_video') --}}
-  </div>
+  <!--/div-->
 
-  @include('partials._isotope_menu')
+  {{--@include('partials._isotope_menu') --}}
 
 
 
