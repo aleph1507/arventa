@@ -10,7 +10,7 @@
 <title>Arventa GMBH</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
+<link rel="shortcut icon" href="{{asset('images/favicon.png')}}" />
 
 <!-- bootstrap -->
 <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" />

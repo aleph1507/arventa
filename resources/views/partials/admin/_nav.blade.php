@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-  <a class="navbar-brand" href="index.html">Admin Panel</a>
+  <div style="width:80%;">
+    <a class="navbar-brand" style="display: inline;" href="{{route('root.index')}}">
+      <img class="nav-logo" src="{{asset('img/1-arventa-web-logo.png')}}" alt="Arventa GMBH"></a>
+  </div>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

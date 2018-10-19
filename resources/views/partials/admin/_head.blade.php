@@ -9,6 +9,10 @@
   <meta name="author" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Admin Panel</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
+
   <!-- Bootstrap core CSS-->
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- Custom fonts for this template-->
