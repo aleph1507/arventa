@@ -533,7 +533,7 @@
 }
 
 .car-thumb-info {
-
+  display:block;x
 }
 
 .status {
@@ -545,7 +545,8 @@
 }
 
 .discount {
-
+  display:block;
+  margin-bottom: 1rem;
 }
 
 
