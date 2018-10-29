@@ -498,13 +498,58 @@
 .model-picker label {
   color: #fff;
 }
+.image-container {
+  position: relative;
+}
 
-.car-thumnail {
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #F6F6F636;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.image-container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+.car-thumbnail {
+    margin: 15px 0px 15px 0px;
+    border-bottom: 1px solid #ffcccc;
+}
+
+.car-thumbnail:hover {
+    /*box-shadow: 1px 1px 2px 2px #ffe6e6;*/
+}
+
+.car-thumbnail-body{
+  padding: 15px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.car-thumbnail-body:hover {
+    background-color: #fcfcfc;
+}
+.car-thumb-img {
 
 }
 
-.car-thumb-img {
-
+.price-skew {
+  position: relative;
+  left: 65%;
+  width: 50%;
+  height: 100%;
+  padding: 3% 0 3% 0;
+  background-color: #777777;
+  color: white;
+  transform: skewX(-35deg);
+  transform-origin: top left;
 }
 
 .flex-container {

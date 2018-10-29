@@ -5,9 +5,9 @@
   <!--< $filter = false; ?>-->
   <div class="container"><!--  -->
     <div class="flex-container">
-      <div id="filter-col" class="col-xs-12 col-sm-12 col-md-6 col-lg-3">;
+      <!--div id="filter-col" class="col-xs-12 col-sm-12 col-md-6 col-lg-3">;
         @include('partials._filter')
-      </div>
+      </div-->
       {{-- <div class="row" id="closed-filter-row"> --}}
       <div class="row car-row" id="car-row">
         @foreach($cars as $car)
