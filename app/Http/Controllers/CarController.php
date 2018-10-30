@@ -435,4 +435,23 @@ class CarController extends Controller
         Session::flash('success', 'This car was successfully deleted.');
         return redirect('/admin');
     }
+
+    public function deleteGI(Request $request){
+      // echo $request->cid;
+      // echo $request->giname;
+      // die();
+      $c = Car::find($request->cid);
+      $gi = explode(';', $c->galleryImages);
+      $ngi = '';
+      File::delete('images/cars/' . $request->cid . '/' . 'gallery/' . $request->giname);
+      for($i = 0; $i < count($gi); $i++){
+        if($gi[$i] != $request->giname){
+          $ngi .= $gi[$i] . ';';
+        }
+      }
+      $c->galleryImages = $ngi;
+      $c->save();
+      Session::flash('success', 'Image removed');
+      return redirect()->route('cars.edit', $c->id);
+    }
 }

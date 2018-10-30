@@ -50,3 +50,5 @@ Route::post('/admin/cars/delete/{id}', 'CarController@destroy')->name('cars.dele
 Route::post('/admin/brands/delete/{id}', 'BrandsController@destroy')->name('brands.delete');
 
 Route::post('/admin/gallery_upload', 'CarController@uploadGallery')->name('gallery.upload');
+
+Route::post('/admin/cars/{cid}/dgi/{giname}', 'CarController@deleteGI')->name('gallery.dgi');

@@ -68,7 +68,7 @@ window.addEventListener('load', function() {
       element: document.getElementById("fine-uploader-gallery"),
       template: 'qq-template-gallery',
       request: {
-          endpoint: '/admin/gallery_upload',
+          endpoint: this.endpoint,
           customHeaders: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
@@ -83,4 +83,10 @@ window.addEventListener('load', function() {
           allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
       }
   });
+
+  // console.log('endpoint: ', this.endpoint);
+  // if(this.endpoint != '/admin/gallery_upload'){
+  //   console.log(galleryUploader);
+  //   galleryUploader.addInitialFiles();
+  // }
 });

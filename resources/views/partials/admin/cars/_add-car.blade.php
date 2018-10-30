@@ -4,6 +4,11 @@
   <form action="{{route('cars.store')}}" id="car_form" method="post" enctype="multipart/form-data"> <!-- class="dropzone" -->
 @endif
   {{csrf_field()}}
+  <script>
+    // endpoint = '/admin/gallery_upload';
+    var endpoint = <?php echo isset($car) ? "'images/cars/$car->id/gallery'" : '\'/admin/gallery_upload\''; ?>;
+    // console.log('endpoint: ', endpoint);
+  </script>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
@@ -311,6 +316,33 @@
                 {{-- <label for="file">Gallery Images</label> --}}
                 {{-- <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple />  --}}
               </div>
+              @if(isset($car))
+                <div class="form-group">
+                  <div id="uploaded-imgs">
+                    <?php
+                      $galImgs = explode(';', $car->galleryImages);
+                    ?>
+                    {{-- {{explode(';', $car->galleryImages)}} --}}
+                    <div class="row">
+                      @for($i = 0; $i < count($galImgs)-1; $i++)
+                        <div class="col-xs-12 col-md-6 mt-5">
+                          <div class="gImgs">
+                            <form action="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}"
+                              method="POST">
+                              {{csrf_field()}}
+                              <input type="submit" class="btn btn-danger rounded-circle GIdelete" value="x">
+                            </form>
+                            {{-- <a href="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}" class="btn btn-danger rounded-circle GIdelete">X</a> --}}
+                            <img style="max-width:50%;"
+                            src="{{asset('images/cars/' . $car->id . '/' . 'gallery/' . $galImgs[$i])}}"
+                            alt="{{$galImgs[$i]}}">
+                          </div>
+                        </div>
+                      @endfor
+                    </div>
+                  </div>
+                </div>
+              @endif
             </div>
           </div>
         </div>

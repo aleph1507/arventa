@@ -1051,3 +1051,9 @@ a.div-a {
 .input-group-text{
     width: -webkit-fill-available;
 }
+
+.GIdelete {
+  position: absolute;
+  top:-10%;
+  left:0;
+}
