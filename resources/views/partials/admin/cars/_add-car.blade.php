@@ -306,6 +306,8 @@
             </div>
             <div id="collapseImages" class="panel-collapse collapse">
               <div class="form-group">
+                <img src="{{asset('images/cars/' . $car->id . '/' . $car->featuredImage)}}" alt="featImg"
+                  class="img-fluid" id="carFeatImg">
                 <label for="featuredImage">Featured Image</label>
                 <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
               </div>
@@ -324,7 +326,7 @@
                     ?>
                     {{-- {{explode(';', $car->galleryImages)}} --}}
                     <div class="row">
-                      @for($i = 0; $i < count($galImgs)-1; $i++)
+                      @for($i = 1; $i < count($galImgs)-1; $i++)
                         <div class="col-xs-12 col-md-6 mt-5">
                           <div class="gImgs">
                             <form action="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}"
