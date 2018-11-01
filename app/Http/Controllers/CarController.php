@@ -446,7 +446,7 @@ class CarController extends Controller
       File::delete('images/cars/' . $request->cid . '/' . 'gallery/' . $request->giname);
       for($i = 0; $i < count($gi); $i++){
         if($gi[$i] != $request->giname){
-          $ngi .= $gi[$i] . ';';
+          $ngi .= ($i == count($gi)-1) ? $gi[$i] : $gi[$i] . ';';
         }
       }
       $c->galleryImages = $ngi;
