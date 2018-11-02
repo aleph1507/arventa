@@ -306,8 +306,10 @@
             </div>
             <div id="collapseImages" class="panel-collapse collapse">
               <div class="form-group">
-                <img src="{{asset('images/cars/' . $car->id . '/' . $car->featuredImage)}}" alt="featImg"
-                  class="img-fluid" id="carFeatImg">
+                @if(isset($car))
+                  <img src="{{asset('images/cars/' . $car->id . '/' . $car->featuredImage)}}" alt="featImg"
+                    class="img-fluid" id="carFeatImg">
+                @endif
                 <label for="featuredImage">Featured Image</label>
                 <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
               </div>
