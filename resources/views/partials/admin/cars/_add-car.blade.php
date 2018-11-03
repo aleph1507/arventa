@@ -306,12 +306,12 @@
             </div>
             <div id="collapseImages" class="panel-collapse collapse">
               <div class="form-group">
-                @if(isset($car))
-                  <img src="{{asset('images/cars/' . $car->id . '/' . $car->featuredImage)}}" alt="featImg"
-                    class="img-fluid" id="carFeatImg">
-                @endif
+                {{-- @if(isset($car)) --}}
+                  <img src="{{isset($car) ? asset('images/cars/' . $car->id . '/' . $car->featuredImage) : ''}}" alt="featImg"
+                    class="img-fluid {{isset($car) ? '' : 'd-none'}}" id="carFeatImg">
+                {{-- @endif --}}
                 <label for="featuredImage">Featured Image</label>
-                <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
+                <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" id="imgInp" name="featuredImage">
               </div>
               <div class="form-group">
                 <div id="fine-uploader-gallery">
@@ -328,7 +328,7 @@
                     ?>
                     {{-- {{explode(';', $car->galleryImages)}} --}}
                     <div class="row">
-                      @for($i = 1; $i < count($galImgs)-1; $i++)
+                      @for($i = 0; $i < count($galImgs)-1; $i++)
                         <div class="col-xs-12 col-md-6 mt-5">
                           <div class="gImgs">
                             <form action="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}"

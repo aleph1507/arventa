@@ -298,7 +298,7 @@ class CarController extends Controller
         'exteriorColor' => 'required',
         'powerBHP' => 'required',
         'price' => 'required',
-        'featuredImage' => 'required|image'
+        // 'featuredImage' => 'required|image'
       ]);
 
       $car = Car::find($id);
@@ -326,8 +326,10 @@ class CarController extends Controller
       $car->interiorColor = $request->interiorColor;
       $car->additionalEquipment = $request->additionalEquipment;
       $car->furtherEquipment = $request->furtherEquipment;
-      $car->featuredImage = $request->featuredImage;
-      $car->galleryImages = $request->galleryImages;
+      if($request->hasFile('featuredImage'))
+        $car->featuredImage = $request->featuredImage;
+      if(isset($request->galleryImages))
+        $car->galleryImages = $request->galleryImages;
 
       if($request->hasFile('featuredImage')){
         $image = $request->file('featuredImage');

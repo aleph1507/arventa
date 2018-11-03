@@ -89,4 +89,24 @@ window.addEventListener('load', function() {
   //   console.log(galleryUploader);
   //   galleryUploader.addInitialFiles();
   // }
+
+  function readURL(input) {
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $('#carFeatImg').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#imgInp").change(function(e) {
+    if($('#carFeatImg').hasClass('d-none'))
+      $('#carFeatImg').removeClass('d-none');
+    $('#carFeatImg').attr('src', e.target.result);
+    readURL(this);
+  });
 });
