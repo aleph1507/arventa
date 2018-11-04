@@ -48,14 +48,6 @@ window.addEventListener('load', function() {
     var furtherEq = document.getElementById('furtherEquipment');
     cfSubmit.addEventListener('click', function(e) {
       e.preventDefault();
-      // var t = '';
-      // var l = $(addEq).val().split('\n');
-      // for(i = 0; i<l.length; i++){
-      //   t+='<li>';
-      //   t+=l[i];
-      //   t+='</li>';
-      // }
-      // $(addEq).val(t);
       $(addEq).val(splitEquipment(addEq));
       $(furtherEq).val(splitEquipment(furtherEq));
       carForm.submit();
@@ -84,12 +76,6 @@ window.addEventListener('load', function() {
       }
   });
 
-  // console.log('endpoint: ', this.endpoint);
-  // if(this.endpoint != '/admin/gallery_upload'){
-  //   console.log(galleryUploader);
-  //   galleryUploader.addInitialFiles();
-  // }
-
   function readURL(input) {
 
     if (input.files && input.files[0]) {
@@ -108,5 +94,37 @@ window.addEventListener('load', function() {
       $('#carFeatImg').removeClass('d-none');
     $('#carFeatImg').attr('src', e.target.result);
     readURL(this);
+  });
+
+  $('.GIdelete').on('click', function(e) {
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+
+    $.ajax({
+      url: '/admin/cars/' + car.id + '/dgi/' + $(e.target).data('img'),
+      method: 'POST',
+      contentType: false,
+      processData: false,
+      cache: false,
+      data: {
+
+      },
+      success: function(data, textStatus, xhr){
+        document.getElementById($(e.target).data('img')).classList.add('d-none');
+        console.log('data: ' + data);
+        console.log('textStatus: ' + textStatus);
+        console.log('xhr: ' + xhr);
+      },
+      error: function(xhr, status, error, message){
+        console.log('xhr: ' + xhr);
+        console.log('status: ' + status);
+        console.log('error: ' + error);
+        console.log('message: ' + message);
+      }
+    });
   });
 });

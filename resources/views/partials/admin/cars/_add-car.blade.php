@@ -6,7 +6,7 @@
   {{csrf_field()}}
   <script>
     // endpoint = '/admin/gallery_upload';
-    var endpoint = <?php echo isset($car) ? "'images/cars/$car->id/gallery'" : '\'/admin/gallery_upload\''; ?>;
+    var endpoint = <?php echo '\'/admin/gallery_upload\'';/*isset($car) ? "'images/cars/$car->id/gallery'" : */ ?>;
     // console.log('endpoint: ', endpoint);
   </script>
   <div class="container">
@@ -326,17 +326,22 @@
                     <?php
                       $galImgs = explode(';', $car->galleryImages);
                     ?>
+                    <script type="text/javascript">
+                      var galImgs = <?php echo json_encode($galImgs); ?>;
+                      var car = <?php echo json_encode($car); ?>;
+                      // console.log('galImgs: ', galImgs);
+                    </script>
                     {{-- {{explode(';', $car->galleryImages)}} --}}
-                    <div class="row">
+                    <div class="row" id="GIdiv">
                       @for($i = 0; $i < count($galImgs)-1; $i++)
                         <div class="col-xs-12 col-md-6 mt-5">
-                          <div class="gImgs">
-                            <form action="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}"
+                          <div class="gImgs" id="{{$galImgs[$i]}}">
+                            {{-- <form action="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}"
                               method="POST">
-                              {{csrf_field()}}
-                              <input type="submit" class="btn btn-danger rounded-circle GIdelete" value="x">
-                            </form>
-                            {{-- <a href="{{route('gallery.dgi', ['cid' => $car->id, 'giname' => $galImgs[$i]])}}" class="btn btn-danger rounded-circle GIdelete">X</a> --}}
+                              {{csrf_field()}} --}}
+                              <input type="button" class="btn btn-danger rounded-circle GIdelete"
+                                data-img="{{$galImgs[$i]}}" value="x">
+                            {{-- </form> --}}
                             <img style="max-width:50%;"
                             src="{{asset('images/cars/' . $car->id . '/' . 'gallery/' . $galImgs[$i])}}"
                             alt="{{$galImgs[$i]}}">

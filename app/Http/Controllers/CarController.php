@@ -343,23 +343,37 @@ class CarController extends Controller
 
       // $gallery_images = $request->file('file');
       $gallery_count = 0;
-      $gallery_string = '';
-
-      if($request->file){
-        foreach($request->file as $gi){
-          var_dump($gi);
-          $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
-          File::exists(public_path() . '/images/cars/' . $car->id . '/') or
-            File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/', 0777, true);
-          $location = public_path('images/cars/' . $car->id . '/' . $filename);
-          Image::make($gi)->fit(800, 500)->save($location);
-          $gallery_string .= $filename . ';';
-        }
-        $car->galleryimages = $gallery_string;
+      // $gallery_string = $car->galleryImages;
+      //
+      // if($request->file){
+      //   foreach($request->file as $gi){
+      //     var_dump($gi);
+      //     $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
+      //     File::exists(public_path() . '/images/cars/' . $car->id . '/') or
+      //       File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/', 0777, true);
+      //     $location = public_path('images/cars/' . $car->id . '/' . $filename);
+      //     Image::make($gi)->fit(800, 500)->save($location);
+      //     $gallery_string .= $filename . ';';
+      //   }
+      //   $car->galleryimages = $gallery_string;
+      // }
+      $tmp_dir = public_path() . '/images/cars/tmp';
+      $gallery_files = scandir($tmp_dir);
+      // if(count($gallery_files) > 0)
+      //   $car->galleryImages = '';
+      foreach($gallery_files as $ga){
+        if(strlen($ga) < 3)
+          continue;
+        File::exists(public_path() . '/images/cars/' . $car->id . '/gallery') or File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/gallery', 0777, true);
+        $dest = public_path('images/cars/' . $car->id . '/' . 'gallery/' . $ga);
+        // copy($tmp_dir . '/' . $ga, $dest);1013  921, 691
+        Image::make($tmp_dir . '/' . $ga)->fit(1013, 691)->save($dest);
+        $car->galleryImages .= $ga . ';';
       }
 
-
       $car->save();
+      $fs = new Filesystem();
+      $fs->cleanDirectory($tmp_dir);
       Session::flash('success', 'This car was successfully updated.');
 
       return redirect()->route('cars.list');
